@@ -1,0 +1,478 @@
+<!-- TTN — MISSION & VISION PAGE – ONE-BLOCK FULL LAYOUT -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background: #020309;
+}
+
+.ttn-logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO TEXT ONLY (NO IMAGE) */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 760px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+/* TEXT-ONLY HERO LAYOUT */
+.ttn-hero-layout {
+  margin-bottom: 3rem;
+}
+
+/* CTAs */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect button */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.5);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.65);
+}
+
+/* Outlined pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADERS */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* TWO-COLUMN VALUES SECTION */
+.ttn-values-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+}
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-theme {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .ttn-values-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ttn-hero-ctas {
+    flex-direction: column;
+  }
+
+  .ttn-btn-primary,
+  .ttn-pill-outline {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .ttn-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- TEXT-ONLY HERO -->
+    <section class="ttn-hero-layout">
+      <div class="ttn-logo-row">
+        <div class="ttn-logo-mark">
+          <img src="https://cdn.shopify.com/s/files/1/0762/8632/8889/files/B82B5A17-9B9B-4EC7-8E6B-CC65E3E5ECEE_4_5005_c.jpg?v=1765151384" alt="Throttle Therapy Nation logo" />
+        </div>
+        <div class="ttn-logo-text">
+          TTN Mission &amp; Vision
+        </div>
+      </div>
+
+      <div>
+        <div class="ttn-kicker">Clarity for riders, families, parks &amp; partners.</div>
+
+        <h1 class="ttn-hero-heading">
+          Empowering Riders. Elevating Communities.
+        </h1>
+        <p class="ttn-hero-support">
+          Ride. Heal. Belong.™ is our foundation.
+        </p>
+
+        <p class="ttn-hero-sub">
+          This page is here so riders, families, parks, and industry partners can quickly understand the heartbeat
+          behind Throttle Therapy Nation™ — what we exist to do, where we’re going, and how we choose to move there.
+          Everything we build is filtered through this Mission &amp; Vision.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a href="/about-throttle-therapy-nation.html" class="ttn-btn-primary">
+            <span>About the Movement</span><span>➜</span>
+          </a>
+          <a href="/join-the-nation.html" class="ttn-pill-outline ttn-pill-outline--pink">
+            Join the Nation
+          </a>
+          <a href="/trusted-gear.html" class="ttn-pill-outline ttn-pill-outline--orange">
+            Trusted Gear &amp; Partners
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">mission</div>
+        <h2 class="ttn-section-title">What TTN Exists to Do.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-body-copy">
+        <p><strong>Mission:</strong> To equip riders, families, parks, and partners with the clarity, tools, and
+        community they need to move through off-road life more safely, honestly, and together — without losing the joy
+        and therapy that brought them here in the first place.</p>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">vision</div>
+        <h2 class="ttn-section-title">Where We’re Intentionally Heading.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-body-copy">
+        <p><strong>Vision:</strong> A Nation of riders, families, parks, and builders who understand the variables,
+        honor the risk, protect each other, and build communities where people can Ride, Heal, and Belong — on and off
+        the mountain.</p>
+      </div>
+    </section>
+
+    <!-- CORE VALUES: RIDE • HEAL • BELONG -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">core values</div>
+        <h2 class="ttn-section-title">How We Live This Out: Ride. Heal. Belong.™</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-values-grid">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">ride</div>
+          <h3 class="ttn-card-heading">The therapy starts with the throttle.</h3>
+          <p class="ttn-card-body">
+            We honor the part of people that comes alive in the dirt, rock, mud, and dark. We teach riding that is rooted
+            in skill, respect, and clear communication — not ego or pressure to send more than a rider or machine is
+            ready for.
+          </p>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">heal</div>
+          <h3 class="ttn-card-heading">We know people carry more than the machine.</h3>
+          <p class="ttn-card-body">
+            Many riders and families are here because life off the trail has been heavy. We create spaces where grief,
+            stress, and transition can be acknowledged without being exploited — and where movement, clarity, and
+            community help people keep going.
+          </p>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">belong</div>
+          <h3 class="ttn-card-heading">Nobody should feel like an outsider here.</h3>
+          <p class="ttn-card-body">
+            New riders, seasoned leaders, widows, kids, park owners, builders — everyone brings something important.
+            We work to make sure language, expectations, education, and community designs never leave people guessing
+            whether they’re welcome. They are.
+          </p>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">integrity</div>
+          <h3 class="ttn-card-heading">We don’t say what we can’t stand behind.</h3>
+          <p class="ttn-card-body">
+            From education to mapping to gear recommendations, we filter everything through real-world experience and
+            responsibility. If we wouldn’t stand behind it with our own family, we won’t put TTN’s name on it.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ALIGNMENT FOR PARKS & PARTNERS -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">parks &amp; industry</div>
+        <h2 class="ttn-section-title">What This Means for Parks, Builders &amp; Brands.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-body-copy">
+        <p>
+          TTN is not here to be “influencer marketing.” We are here to honor the weight parks and companies carry when
+          they put their names, machines, and land in front of riders and families. When you partner with TTN, you’re
+          aligning with a Mission &amp; Vision that takes that responsibility seriously.
+        </p>
+      </div>
+
+      <div class="ttn-values-grid" style="margin-top:1.5rem;">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">for parks</div>
+          <h3 class="ttn-card-heading">Clarity, respect &amp; shared responsibility.</h3>
+          <p class="ttn-card-body">
+            We value parks who set clear expectations, care about mapping and signage, and genuinely want riders to
+            understand the terrain they’re entering — not just sign a waiver and hope for the best.
+          </p>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">for brands &amp; builders</div>
+          <h3 class="ttn-card-heading">Integrity over hype.</h3>
+          <p class="ttn-card-body">
+            We look for partners who prioritize safety, long-term performance, and honest communication about what their
+            products can and cannot do. TTN Trusted Gear reflects those standards.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">next steps</div>
+        <h2 class="ttn-section-title">If This Resonates, You’re in the Right Place.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-body-copy">
+        <p>
+          If this Mission &amp; Vision matches what you’ve lived, what you’re carrying, or what you want to help build
+          next, you’re already part of why TTN exists. The next step is simply choosing how you want to plug in — as a
+          rider, a family, a park, a builder, a leader, or all of the above.
+        </p>
+      </div>
+
+      <div class="ttn-hero-ctas" style="margin-top:1.5rem;">
+        <a href="/join-the-nation.html" class="ttn-btn-primary">
+          <span>Join the Nation</span><span>➜</span>
+        </a>
+        <a href="/contact-and-legal.html" class="ttn-pill-outline">
+          Contact TTN
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — MISSION & VISION PAGE -->

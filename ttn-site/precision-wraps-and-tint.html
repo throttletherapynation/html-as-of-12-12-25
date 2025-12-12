@@ -1,0 +1,932 @@
+<!-- TTN — PRECISION WRAPS & TINT • ALL-IN-ONE BUSINESS PAGE -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+
+  --ttn-pink-soft: #ff4fa6;
+  --ttn-cream: #fdf5ea;
+
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  padding: 3rem 1.25rem 4rem;
+}
+
+/* SHELL */
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* BASICS */
+.ttn-theme img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ttn-theme a {
+  color: var(--ttn-blue);
+  text-decoration: none;
+}
+.ttn-theme a:hover {
+  color: var(--ttn-pink);
+}
+
+/* LOGO / TAG ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+/* simplified logo – uses Julian's round logo, no neon glow */
+/* LOGO CIRCLE (TTN / BUSINESS LOGOS) */
+/* GUARANTEED PERFECT CIRCLE LOGO */
+.ttn-logo-mark {
+  width: 120px;
+  max-width: 120px;
+  aspect-ratio: 1 / 1;       /* ensures perfect circle */
+  border-radius: 50%;        /* circular shape */
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.35);
+  background: #020309;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;            /* prevents squishing in flex layouts */
+}
+
+/* FORCE IMAGE TO BE A PERFECT CIRCLE TOO */
+.ttn-logo-mark img,
+.ttn-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+
+
+.ttn-logo-mark span {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.05rem;
+  color: var(--ttn-pink);
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO TEXT */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.2rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 780px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 160px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.9rem;
+}
+
+/* HERO LAYOUT */
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+@media (min-width: 900px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+}
+
+/* HERO MEDIA */
+.ttn-hero-media {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+  min-height: 260px;
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.12), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+/* softened neon backing glow */
+.ttn-hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  border-radius: 40px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.35),
+    rgba(0, 198, 255, 0.25),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.ttn-hero-media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.96;
+}
+
+.ttn-hero-media-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at bottom right, rgba(0,198,255,0.16), transparent 55%);
+}
+
+/* CTA BUTTONS */
+.ttn-hero-ctas,
+.ttn-cta-actions,
+.ttn-band-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(255, 0, 125, 0.45);
+  transition:
+    transform 0.15s ease-out,
+    filter 0.15s ease-out,
+    box-shadow 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 0 32px rgba(255, 0, 125, 0.65);
+}
+
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.82);
+  color: var(--ttn-text);
+  cursor: pointer;
+  transition:
+    background 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADER */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+.ttn-section-sub {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+  margin-top: 0.5rem;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* GRIDS & CARDS */
+.ttn-card-row,
+.ttn-card-grid,
+.ttn-pillars-grid,
+.ttn-lane-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.16), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ttn-card-kicker,
+.ttn-card-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.ttn-card-heading,
+.ttn-card-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body,
+.ttn-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+  flex: 1;
+}
+
+.ttn-card-body ul,
+.ttn-list {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+.ttn-card-body li + li,
+.ttn-list li + li {
+  margin-top: 0.2rem;
+}
+
+/* CHIP ROW & STAT PILLS */
+.ttn-chip-row {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ttn-chip {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(5,12,28,0.9);
+  color: var(--ttn-text-soft);
+}
+
+.ttn-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.ttn-stat-pill {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.26rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(3,8,20,0.95);
+  color: var(--ttn-text-soft);
+}
+
+/* BAND CALLOUTS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.16), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CTA BOX */
+.ttn-cta-band {
+  margin-top: 3.2rem;
+  text-align: center;
+}
+
+.ttn-cta-box {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px 18px 28px;
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.2), transparent 65%),
+    radial-gradient(circle at bottom, rgba(0,198,255,0.2), transparent 65%),
+    #020814;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.98);
+}
+
+.ttn-cta-box h2 {
+  font-family: 'Rock Salt', system-ui;
+  margin-top: 0;
+  color: var(--ttn-pink);
+}
+
+.ttn-cta-box p {
+  color: var(--ttn-text-soft);
+  font-size: 0.94rem;
+}
+
+/* GLOW WRAPPER */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.38),
+    rgba(0, 198, 255, 0.32),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.65;
+  z-index: -1;
+}
+
+/* LAYOUT HELPERS */
+.ttn-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .ttn-grid-2 {
+    grid-template-columns: 1.1fr 1.1fr;
+  }
+}
+
+.ttn-card-grid--three {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 1025px) {
+  .ttn-card-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1024px) {
+  .ttn-card-grid--three {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-card-row,
+  .ttn-card-grid,
+  .ttn-pillars-grid,
+  .ttn-lane-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-hero-ctas,
+  .ttn-band-links,
+  .ttn-cta-actions {
+    flex-direction: column;
+  }
+  .ttn-btn-primary,
+  .ttn-pill-outline {
+    width: 100%;
+  }
+}
+</style>
+
+<div class="ttn-theme" id="precision-wraps-top">
+  <div class="ttn-shell">
+
+    <!-- HERO: BUSINESS AT A GLANCE -->
+    <section class="ttn-hero-layout">
+      <!-- LEFT: LOGO + TEXT -->
+      <div>
+        <div class="ttn-logo-row">
+          <div class="ttn-logo-mark">
+            <img
+              src="https://assets.zyrosite.com/sdnMdPjG6N37IB0O/b82b5a17-9b9b-4ec7-8e6b-cc65e3e5ecee_4_5005_c-W2zSHbHs8suhSuJE.jpeg"
+              alt="Precision Wraps &amp; Tint logo"
+            />
+          </div>
+          <div class="ttn-logo-text">
+            TTN™ Small Business Mentee • SWFL’s Premier Award-Winning Wrap &amp; Tint Shop
+          </div>
+        </div>
+
+        <div class="ttn-kicker">Cape Coral, Florida • Armor, Identity &amp; Protection</div>
+
+        <h1 class="ttn-hero-heading">
+          Turn What You Drive Into Proof of Who You Are.
+        </h1>
+
+        <p class="ttn-hero-support">
+          Your vision. Their precision. Built on recovery, integrity and doing it right the first time.
+        </p>
+
+        <p class="ttn-hero-sub">
+          <strong>Precision Wraps &amp; Tint LLC</strong> is a detail-obsessed, award-winning wrap and tint shop
+          in Cape Coral, Florida — transforming vehicles, brands and storefronts for people who want their story
+          to show up loud, clear and professional in the real world, not just in photos.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a href="tel:1-239-445-6022" class="ttn-btn-primary">
+            <span>Call the Shop</span><span>📞</span>
+          </a>
+          <a href="mailto:precisionwraps_julian@gmail.com" class="ttn-pill-outline ttn-pill-outline--pink">
+            Email Precision Wraps &amp; Tint
+          </a>
+          <a
+            href="https://www.facebook.com/PrecisionWrapsAndTint"
+            target="_blank"
+            rel="noopener"
+            class="ttn-pill-outline ttn-pill-outline--orange"
+          >
+            View Recent Work on Facebook
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: HERO MEDIA -->
+      <div class="ttn-hero-media">
+        <img
+          src="https://assets.zyrosite.com/sdnMdPjG6N37IB0O/488522032_1192845206173932_6305829922370889483_n-qz1oyyd7GAIdN11Y.jpg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Precision Wraps &amp; Tint shop work and branding"
+        />
+        <div class="ttn-hero-media-overlay"></div>
+      </div>
+    </section>
+
+    <!-- QUICK BUSINESS DETAILS -->
+    <section class="ttn-section" id="precision-details">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Business Details</div>
+        <h2 class="ttn-section-title">Where to Find Precision Wraps &amp; Tint.</h2>
+        <p class="ttn-section-sub">
+          Start with the basics — then let the work and the story speak for themselves.
+        </p>
+      </div>
+
+      <div class="ttn-grid-2">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Shop Information</div>
+          <h3 class="ttn-card-heading">Core Contact &amp; Location.</h3>
+          <div class="ttn-card-body">
+            <p>
+              <strong>Precision Wraps &amp; Tint LLC</strong><br/>
+              227 SW 3rd Ave, Unit 200<br/>
+              Cape Coral, FL 33991<br/>
+              United States
+            </p>
+            <p>
+              <strong>Phone:</strong>
+              <a href="tel:1-239-445-6022">(239) 445-6022</a><br/>
+              <strong>Email:</strong>
+              <a href="mailto:precisionwraps_julian@gmail.com">precisionwraps_julian@gmail.com</a><br/>
+              <strong>Facebook:</strong>
+              <a href="https://www.facebook.com/PrecisionWrapsAndTint" target="_blank" rel="noopener">
+                facebook.com/PrecisionWrapsAndTint
+              </a>
+            </p>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">At a Glance</div>
+          <h3 class="ttn-card-heading">What You’re Getting Into.</h3>
+          <div class="ttn-card-body">
+            <p>
+              SWFL’s <strong>premier award-winning shop</strong> for people who care about how their rig, brand
+              and storefront show up in the world — and who don’t have time to babysit sloppy work.
+            </p>
+            <ul class="ttn-list">
+              <li>Commercial &amp; fleet wraps that actually get noticed.</li>
+              <li>High-level color-change wraps &amp; custom identity work.</li>
+              <li>Automotive, residential &amp; commercial tint.</li>
+              <li>Paint Protection Film for real-world abuse.</li>
+              <li>Branding, logos, decals &amp; print-and-ship packages.</li>
+            </ul>
+            <div class="ttn-stat-row">
+              <span class="ttn-stat-pill">Award-Winning Shop</span>
+              <span class="ttn-stat-pill">Nationwide Travel Available</span>
+              <span class="ttn-stat-pill">TTN™ Small Business Mentee</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY TTN BACKS THEM -->
+    <section class="ttn-section" id="ttn-backs-precision">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Why TTN™ Supports Them</div>
+        <h2 class="ttn-section-title">The Kind of Small Business We’ll Put Our Name Beside.</h2>
+      </div>
+
+      <article class="ttn-band ttn-glow">
+        <h3 class="ttn-band-heading">Built on Recovery, Integrity &amp; Follow-Through.</h3>
+        <p class="ttn-band-body">
+          Throttle Therapy Nation™ doesn’t just hang logos on the wall. We back people and businesses that live this
+          the way we do — with honesty, grit and a bigger “why” than just getting paid. Precision Wraps &amp; Tint earned
+          their place as a TTN™ Small Business Mentee because of how they show up when nobody’s watching.
+        </p>
+        <p class="ttn-band-body" style="margin-top:0.8rem;">
+          Julian doesn’t hide his past — he uses it. Since getting clean in 2013, he’s been intentionally rebuilding his
+          life so he can be the proof that <strong>we do recover</strong> and that your past doesn’t get to write your
+          whole story. That same mindset shows up in the shop: no shortcuts, no ghosting, no “good enough.” Just
+          communication, pride in the work, and a deep respect for the people trusting him with their investment.
+        </p>
+        <p class="ttn-band-body" style="margin-top:0.8rem;">
+          That’s TTN to the core. <strong>Ride. Heal. Belong.™</strong> Protect what you’ve built, own your story, and
+          find the people who take that seriously. That’s why Precision Wraps &amp; Tint has a home inside our mentored lane.
+        </p>
+
+        <div class="ttn-chip-row" style="margin-top:1rem;">
+          <span class="ttn-chip">Recovery-Rooted Story</span>
+          <span class="ttn-chip">Integrity Over Hype</span>
+          <span class="ttn-chip">Community-First Energy</span>
+          <span class="ttn-chip">Ride. Heal. Belong.™ Aligned</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- THEIR STORY -->
+    <section class="ttn-section" id="precision-story">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Their Story</div>
+        <h2 class="ttn-section-title">From Getting Clean to Getting Every Detail Right.</h2>
+        <p class="ttn-section-sub">
+          This isn’t a side hustle. It’s a life rebuild, a legacy play and a way to show the next person that it’s
+          never too late to start over and go all in.
+        </p>
+      </div>
+
+      <div class="ttn-grid-2">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Origin</div>
+          <h3 class="ttn-card-heading">“We Do Recover — And We Build Things That Last.”</h3>
+          <div class="ttn-card-body">
+            <p>
+              Precision Wraps &amp; Tint was built on a simple belief: your vision deserves to be brought to life with
+              pride, passion and purpose. Julian knows what it feels like to build something from the ground up, to
+              pour everything into your brand, your vehicle, your business — and he takes that responsibility personally.
+            </p>
+            <p>
+              This is more than just a business. It’s a dream that took shape after he got clean in 2013 and chose
+              to focus on growth, development and being the example for the people watching him. The quiet message
+              under every project is the same:
+              <strong>“We do recover. Your past doesn’t define you.”</strong>
+            </p>
+            <p>
+              Every wrap, every tint job, every branding install is proof of that — a physical reminder that you can
+              rebuild, rebrand and roll forward with your head high.
+            </p>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">What He Stands For</div>
+          <h3 class="ttn-card-heading">Integrity. Quality. Consistency. Heart.</h3>
+          <div class="ttn-card-body">
+            <p>
+              The shop runs on four simple pillars:
+            </p>
+            <ul class="ttn-list">
+              <li><strong>Integrity</strong> — show up, tell the truth, own the outcome.</li>
+              <li><strong>Quality</strong> — no “good enough,” no shortcuts, no rushed installs for a quick photo.</li>
+              <li><strong>Consistency</strong> — the same pride for a single truck tint as a full fleet wrap.</li>
+              <li><strong>Heart</strong> — seeing the human behind the vehicle, brand or storefront.</li>
+            </ul>
+            <p style="margin-top:0.6rem;">
+              Precision Wraps &amp; Tint isn’t just a service — it’s a commitment to helping people elevate, grow and
+              proudly represent who they are. On the road, in their business, and in the story they’re writing next.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT THEY DO -->
+    <section class="ttn-section" id="precision-services">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">What They Do</div>
+        <h2 class="ttn-section-title">Real-World Wraps, Tint &amp; Protection That Hold Up.</h2>
+        <p class="ttn-section-sub">
+          From one-off builds to full fleets, the work is designed to survive sun, miles, weather and real life —
+          not just a highlight reel.
+        </p>
+      </div>
+
+      <div class="ttn-card-grid--three">
+        <!-- COMMERCIAL & FLEET WRAPS -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Commercial &amp; Fleet Wraps</div>
+          <h3 class="ttn-card-title">Put Your Business on the Map.</h3>
+          <p class="ttn-card-text">
+            Full and partial commercial wraps that make your brand impossible to miss — without sacrificing clarity
+            or professionalism. Designed to stay sharp, readable and on-brand, even after years of use.
+          </p>
+          <ul class="ttn-list">
+            <li>Single-vehicle branding and full fleet rollouts.</li>
+            <li>Readable designs that work at speed and at a glance.</li>
+            <li>Layout and color choices made for real-world visibility.</li>
+          </ul>
+        </article>
+
+        <!-- COLOR CHANGE & CUSTOM WRAPS -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Color Change &amp; Custom</div>
+          <h3 class="ttn-card-title">From “Just a Rig” to “That’s Me.”</h3>
+          <p class="ttn-card-text">
+            Clean, high-level color-change wraps and custom touches that turn daily drivers, toys and work rigs into
+            something you can’t wait to walk up to in the lot.
+          </p>
+          <ul class="ttn-list">
+            <li>Full color-change wraps with pro-level finish.</li>
+            <li>Accent, stripe and detail work for personality.</li>
+            <li>Design decisions made around body lines &amp; longevity.</li>
+          </ul>
+        </article>
+
+        <!-- TINT -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Window Tint</div>
+          <h3 class="ttn-card-title">Comfort, Privacy &amp; Clean Lines.</h3>
+          <p class="ttn-card-text">
+            Automotive, residential and commercial tint that goes beyond “make it darker” — focused on heat rejection,
+            UV protection and a finish that looks like it belonged there from day one.
+          </p>
+          <ul class="ttn-list">
+            <li>Automotive tint tuned for Florida sun &amp; visibility.</li>
+            <li>Home &amp; storefront solutions for heat and glare.</li>
+            <li>No purple fade, no bubbles, no “just ignore that corner.”</li>
+          </ul>
+        </article>
+
+        <!-- PPF -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Paint Protection Film</div>
+          <h3 class="ttn-card-title">Invisible Armor for Real Use.</h3>
+          <p class="ttn-card-text">
+            PPF installs that quietly take the hits — rock chips, road debris, bugs and daily abuse — so your paint
+            doesn’t have to.
+          </p>
+          <ul class="ttn-list">
+            <li>Front ends, high-impact zones &amp; key wear areas.</li>
+            <li>Recommendations based on how you actually use the vehicle.</li>
+            <li>Installed with edges and seams in mind, not just speed.</li>
+          </ul>
+        </article>
+
+        <!-- BRANDING & PRINT PACKAGES -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Branding &amp; Print Packages</div>
+          <h3 class="ttn-card-title">Your Story, One Consistent Look.</h3>
+          <p class="ttn-card-text">
+            Logos, decals, graphics and print-and-ship packages that keep your brand consistent — on vehicles,
+            storefronts, trailers and beyond.
+          </p>
+          <ul class="ttn-list">
+            <li>Logo &amp; graphic layout support.</li>
+            <li>Decals and graphics shipped to you, ready to install.</li>
+            <li>Branding that feels like you, not a template.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW TO WORK WITH THEM -->
+    <section class="ttn-section" id="precision-process">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">How It Works</div>
+        <h2 class="ttn-section-title">Simple, Honest, No-BS Process.</h2>
+        <p class="ttn-section-sub">
+          No disappearing acts, no surprise add-ons, no “we rushed it because we were busy.” Just a clear flow that
+          respects your time, your money and your name on the door.
+        </p>
+      </div>
+
+      <div class="ttn-card-grid--three">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Step 1</div>
+          <h3 class="ttn-card-title">Share the Vision.</h3>
+          <p class="ttn-card-text">
+            Call, message or email with what you’re thinking — a single rig, a full fleet, storefront glass, home
+            tint or a full branding package. You don’t have to have it all figured out.
+          </p>
+          <ul class="ttn-list">
+            <li>Talk through goals, budget and timeline.</li>
+            <li>Get honest feedback on what will actually work.</li>
+            <li>Align on direction before any material gets cut.</li>
+          </ul>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Step 2</div>
+          <h3 class="ttn-card-title">Prep, Install &amp; Respect the Details.</h3>
+          <p class="ttn-card-text">
+            Surfaces are cleaned and prepped correctly, then film, wrap or PPF is installed with patience and
+            precision — built for how it will look months and years from now, not just the “after” photo.
+          </p>
+          <ul class="ttn-list">
+            <li>Edges, seams and corners treated like the main event.</li>
+            <li>Communication if anything changes mid-project.</li>
+            <li>No shortcuts to save five minutes and cost you years.</li>
+          </ul>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-label">Step 3</div>
+          <h3 class="ttn-card-title">Walkthrough, Aftercare &amp; Follow-Up.</h3>
+          <p class="ttn-card-text">
+            Before you roll out, you’ll know what’s normal as film cures, how to care for it, and what to look out
+            for so you’re not left guessing or googling.
+          </p>
+          <ul class="ttn-list">
+            <li>Real-world aftercare tips, not just a paper handoff.</li>
+            <li>Clear point of contact if you have questions.</li>
+            <li>Relationship-focused support, not one-and-done energy.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="ttn-cta-band" id="precision-cta">
+      <div class="ttn-cta-box ttn-glow">
+        <h2>Ready to Make Your Rig Look Like Your Story?</h2>
+        <p>
+          Whether it’s a family hauler, a daily workhorse, a full fleet or the rig you’ve bled over in the garage,
+          Precision Wraps &amp; Tint treats it like it matters — because it does, and so do you. This is where clean
+          work, real communication and a recovery-rooted story meet high-level execution.
+        </p>
+        <p style="font-size:0.86rem; opacity:0.9; margin-top:0.7rem;">
+          You don’t have to walk in with a perfect plan. Start with a call, a message or an email. Share where you’re
+          at, what you’re trying to build and what you want people to feel when they see your vehicle, your fleet or
+          your storefront. Julian and the team will help you get there — no pressure, no script, just real options
+          for real life.
+        </p>
+
+        <div class="ttn-cta-actions">
+          <a href="tel:1-239-445-6022" class="ttn-btn-primary">
+            <span>Call Precision Wraps &amp; Tint</span><span>📞</span>
+          </a>
+          <a
+            href="mailto:precisionwraps_julian@gmail.com?subject=Precision%20Wraps%20%26%20Tint%20-%20Project%20Inquiry"
+            class="ttn-pill-outline ttn-pill-outline--pink"
+          >
+            Email About a Project
+          </a>
+          <a
+            href="https://www.facebook.com/PrecisionWrapsAndTint"
+            target="_blank"
+            rel="noopener"
+            class="ttn-pill-outline ttn-pill-outline--orange"
+          >
+            Message on Facebook
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END PRECISION WRAPS & TINT PAGE -->

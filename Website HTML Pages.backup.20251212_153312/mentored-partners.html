@@ -1,0 +1,672 @@
+<!-- TTN — MENTORED PARTNER SPOTLIGHT PAGE – USING NEW STYLE -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS – MATCHES NEW RIDER ESSENTIALS / NATION LAYOUT */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LINKS */
+.ttn-theme a {
+  color: var(--ttn-blue);
+  text-decoration: none;
+}
+.ttn-theme a:hover {
+  color: var(--ttn-pink);
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.35), transparent 60%),
+    radial-gradient(circle at bottom, rgba(0,198,255,0.4), #020309 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ttn-logo-mark span {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.3rem;
+  color: var(--ttn-pink);
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO TEXT (TEXT-ONLY LAYOUT) */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 780px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* HERO CTAS */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+/* Primary neon redirect button */
+.ttn-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 0 26px rgba(255, 0, 125, 0.45);
+
+  transition:
+    transform 0.15s ease-out,
+    filter 0.15s ease-out,
+    box-shadow 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 0 38px rgba(255, 0, 125, 0.6);
+}
+
+/* Outline pills */
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  cursor: pointer;
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* CHIP ROW FOR QUICK LABELS */
+.ttn-chip-row {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ttn-chip {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(5,12,28,0.9);
+  color: var(--ttn-text-soft);
+}
+
+/* SECTION HEADER */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD ROWS */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+  flex: 1;
+}
+
+.ttn-card-body ul {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+.ttn-card-body li + li {
+  margin-top: 0.2rem;
+}
+
+/* SMALL TITLE STYLE FOR STEP CARDS */
+.ttn-card-title-small {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--ttn-text-soft);
+}
+
+/* BANDS (WIDE CALLOUTS) */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-hero-ctas,
+  .ttn-band-links {
+    flex-direction: column;
+  }
+  .ttn-btn-primary,
+  .ttn-pill-outline {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO – MENTORED PARTNER SPOTLIGHT -->
+    <section class="ttn-hero-layout" id="top">
+      <div>
+       
+          <div class="ttn-logo-text">
+            TTN Emerging Partners Network • All Throttle. All Terrain.
+          </div>
+        </div>
+
+        <div class="ttn-kicker">
+          Throttle Therapy Nation™ • Mentored Partner Spotlight Lane
+        </div>
+
+        <h1 class="ttn-hero-heading">
+         Emerging Partners of the Nation
+        </h1>
+
+        <p class="ttn-hero-support">
+          The ones TTN takes under wing until they’re ready to fly.
+        </p>
+
+        <p class="ttn-hero-sub">
+          This page houses every <strong>active TTN Mentored Partner</strong> —
+          the small businesses we ride alongside while they stabilize, structure and grow.
+          When they hit their stride, they “graduate” and stand fully on their own in the TTN ecosystem.
+        </p>
+
+        <p class="ttn-hero-sub">
+          TTN also hosts select partner home bases inside our Nation — so riders can discover,
+          trust and reach them without getting lost in the noise.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a
+            href="/ttn-application-gateway.html"
+            class="ttn-btn-primary"
+            target="_top"
+          >
+            <span>Apply as a Mentored Partner</span><span>➜</span>
+          </a>
+          <a
+            href="mailto:ride.heal.belong@gmail.com?subject=Mentored%20Partner%20Question"
+            class="ttn-pill-outline ttn-pill-outline--pink"
+          >
+            Ask TTN™ About Mentorship
+          </a>
+        </div>
+
+        <div class="ttn-chip-row">
+          <span class="ttn-chip">TTN Mentored Partner Lane</span>
+          <span class="ttn-chip">Hosted Partner Sites</span>
+          <span class="ttn-chip">All Throttle. All Terrain.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPOTLIGHT SECTION -->
+    <section class="ttn-section" id="spotlight">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">current mentored partners</div>
+        <h2 class="ttn-section-title">The Businesses Riding Under the TTN Wing.</h2>
+        <p class="ttn-body-copy">
+          These are the trusted small businesses currently in the
+          <strong>TTN Mentored Partner lane</strong>.
+          Each one is different in what they offer — but all of them are aligned with
+          TTN’s safety-first, community-centered, “no rider left behind” culture.
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+
+        <!-- AXLE & ARC FAB – CUSTOM CAGES -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">
+            Our First TTN Sponsored Mentored Partner
+          </div>
+          <h3 class="ttn-card-heading">
+            Axle &amp; Arc Fab – Custom Cages
+          </h3>
+          <div class="ttn-card-body">
+            <p>
+              <strong>Axle &amp; Arc Fab</strong> is where precision fabrication meets rider protection.
+              Custom cages, brackets and weld work built with the kind of detail only a rider who’s
+              actually been upside down in the dirt understands.
+            </p>
+            <p>
+              As TTN’s first <strong>Sponsored Mentored Partner</strong>, Axle &amp; Arc Fab is the
+              blueprint for what this lane looks like at its best: humble, accountable, always learning,
+              and deeply committed to keeping riders and families safer in real-world conditions.
+            </p>
+            <ul>
+              <li>Focus: custom cages, fabrication, rider safety and structural integrity.</li>
+              <li>Heart: build it once, build it right, build it to bring you home.</li>
+              <li>Role in TTN: core build partner for select TTN rigs and projects.</li>
+            </ul>
+
+            <p style="margin-top:0.8rem;">
+              TTN hosts the <strong>Axle &amp; Arc Fab</strong> primary home base inside
+              Throttle Therapy Nation, so riders can explore builds, story and offerings
+              without leaving the ecosystem.
+            </p>
+
+            <div class="ttn-chip-row" style="margin-top:0.8rem;">
+              <span class="ttn-chip">TTN Sponsored Mentored Partner</span>
+              <span class="ttn-chip">Fabrication &amp; Custom Cages</span>
+              <span class="ttn-chip">Safety-Driven Builds</span>
+            </div>
+
+            <div style="margin-top:1.1rem; display:flex; flex-wrap:wrap; gap:0.7rem;">
+              <a
+                href="/axle-and-arc-fab.html"
+                class="ttn-btn-primary"
+                target="_top"
+              >
+                <span>View Axle &amp; Arc Fab Page</span><span>➜</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRECISION WRAPS AND TINT LLC -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">
+            Our First Small Business Partner
+          </div>
+          <h3 class="ttn-card-heading">
+            Precision Wraps And Tint LLC
+          </h3>
+          <div class="ttn-card-body">
+            <p>
+              <strong>Precision Wraps And Tint LLC</strong> is a rider-trusted
+              <em>Automotive Customization Shop</em> based in Cape Coral, Florida — bringing
+              a different kind of armor and identity to throttle-powered life.
+            </p>
+            <p>
+              As TTN’s <strong>first Small Business Partner</strong> in the Mentored Partner lane,
+              they carry the heart of the program: already out here doing the work, now choosing to
+              grow with more structure, support and aligned community around them — with their base
+              site hosted inside <strong>Throttle Therapy Nation</strong>.
+            </p>
+
+            <ul>
+              <li><strong>WINDOW TINTING</strong> – Automotive, Commercial &amp; Residential.</li>
+              <li><strong>VINYL WRAPS</strong> – Color change, printed, storefronts &amp; wall wraps.</li>
+              <li><strong>PAINT PROTECTION FILM</strong> – Extra defense for rigs that actually get used.</li>
+            </ul>
+
+            <p style="margin-top:0.8rem;">
+              <strong>Location:</strong><br>
+              227 SW 3rd Ave #200, Cape Coral, FL, United States, Florida
+            </p>
+
+            <p style="margin-top:0.4rem;">
+              <strong>Contact:</strong><br>
+              Phone: <a href="tel:+12394456022">(239) 445-6022</a><br>
+              Email: <a href="mailto:Precisionwraps_julian@gmail.com">Precisionwraps_julian@gmail.com</a>
+            </p>
+
+            <div class="ttn-chip-row" style="margin-top:0.8rem;">
+              <span class="ttn-chip">TTN Small Business Partner</span>
+              <span class="ttn-chip">Wraps &amp; Tint</span>
+              <span class="ttn-chip">Paint Protection</span>
+              <span class="ttn-chip">Cape Coral, FL</span>
+            </div>
+
+            <div style="margin-top:1.1rem; display:flex; flex-wrap:wrap; gap:0.7rem;">
+              <!-- TTN-hosted base site -->
+              <a
+                href="/percision-wraps-and-tint.html"
+                class="ttn-btn-primary"
+                target="_top"
+              >
+                <span>Visit Precision Wraps &amp; Tint on TTN</span><span>➜</span>
+              </a>
+
+              <!-- Facebook -->
+              <a
+                href="https://www.facebook.com/PrecisionWrapsAndTint"
+                class="ttn-pill-outline ttn-pill-outline--orange"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook Page
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- SAND & SUGAR CO. -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">
+            TTN Mentored Partner
+          </div>
+          <h3 class="ttn-card-heading">
+            Sand &amp; Sugar Co.
+          </h3>
+          <div class="ttn-card-body">
+            <p>
+              <strong>Sand &amp; Sugar Co.</strong> is a small cottage bakery based in Cape Coral, Florida —
+              baking the kind of treats that feel like a hug after a long day in the sun, sand or shop.
+            </p>
+            <p>
+              Every order is made with <strong>heart (&amp; a little chaos)</strong>,
+              serving families, riders and locals who want something warm, real and home-created —
+              not mass-produced, big-box sugar.
+            </p>
+
+            <p style="margin-top:0.6rem;">
+              <strong>How to order:</strong><br>
+              Message to order and coordinate pickups locally in Cape Coral, FL.
+            </p>
+
+            <p style="margin-top:0.6rem;">
+              <strong>Location:</strong><br>
+              Cape Coral, FL
+            </p>
+
+            <p style="margin-top:0.4rem;">
+              <strong>Contact:</strong><br>
+              Phone: <a href="tel:+19378159555">(937) 815-9555</a><br>
+              Email: <a href="mailto:sandsugarco@yahoo.com">sandsugarco@yahoo.com</a>
+            </p>
+
+            <div class="ttn-chip-row" style="margin-top:0.8rem;">
+              <span class="ttn-chip">TTN Mentored Partner</span>
+              <span class="ttn-chip">Cottage Bakery</span>
+              <span class="ttn-chip">Cape Coral, FL</span>
+              <span class="ttn-chip">Made With 🖤</span>
+            </div>
+
+            <div style="margin-top:1.1rem; display:flex; flex-wrap:wrap; gap:0.7rem;">
+              <a
+                href="https://www.facebook.com/profile.php?id=61578151163523"
+                class="ttn-pill-outline ttn-pill-outline--orange"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Sand &amp; Sugar Co. on Facebook
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- BAND – INVITE / FINE PRINT -->
+    <section class="ttn-band ttn-glow" id="join">
+      <h2 class="ttn-band-heading">Want to Join the Mentored Partner Lane?</h2>
+      <p class="ttn-band-body">
+        If you’re already serving riders — in the dirt, on the water, in the snow or on the street —
+        and you know you’re ready for more structure and support, the
+        <strong>TTN Mentored Partner Program</strong> might be your lane.
+      </p>
+      <p class="ttn-band-body" style="margin-top:0.7rem;">
+        We look for people who are <strong>already doing the work</strong>:
+        small shops, fabricators, media teams, event crews, guides and educators who care about riders and
+        families more than hype. If that’s you, we want to hear your story — not your highlight reel.
+      </p>
+
+      <div class="ttn-band-links">
+        <a
+          href="/ttn-application-gateway.html"
+          class="ttn-btn-primary"
+          target="_top"
+        >
+          <span>Go to Application Gateway</span><span>➜</span>
+        </a>
+        <a
+          href="mailto:ride.heal.belong@gmail.com?subject=Mentored%20Partner%20Spotlight%20Question"
+          class="ttn-pill-outline"
+        >
+          Email TTN™
+        </a>
+        <a href="#top" class="ttn-pill-outline ttn-pill-outline--pink">
+          Back to Top
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — MENTORED PARTNER SPOTLIGHT PAGE -->

@@ -1,0 +1,936 @@
+<!-- TTN — CONTACT & LEGAL CENTER – MATCHED TO "THE HEART OF TTN" THEME -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LINKS */
+.ttn-theme a {
+  color: var(--ttn-blue);
+  text-decoration: none;
+}
+.ttn-theme a:hover {
+  color: var(--ttn-pink);
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background: #020309;
+}
+
+.ttn-logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO TEXT */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 760px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+/* HERO LAYOUT */
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* HERO MEDIA */
+.ttn-hero-media {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 0 40px rgba(255, 0, 125, 0.6);
+  min-height: 260px;
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.2), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+/* neon backing glow */
+.ttn-hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  border-radius: 40px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.8),
+    rgba(0, 198, 255, 0.6),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.ttn-hero-media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+.ttn-hero-media-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at bottom right, rgba(0,198,255,0.22), transparent 55%);
+}
+
+/* CTAs */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.5);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.65);
+}
+
+/* Outlined pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADER */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD ROWS */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+  flex: 1;
+}
+
+.ttn-card-body ul {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+.ttn-card-body li + li {
+  margin-top: 0.2rem;
+}
+
+/* BANDS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* SMALL NOTE STYLE */
+.ttn-subnote {
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-top: 0.6rem;
+}
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-hero-ctas {
+    flex-direction: column;
+  }
+  .ttn-btn-primary,
+  .ttn-pill-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO: CONTACT & LEGAL CENTER -->
+    <section class="ttn-hero-layout" id="top">
+      <div>
+        <div class="ttn-logo-row">
+          <div class="ttn-logo-mark">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,fit=crop/sdnMdPjG6N37IB0O/contact-us-HqLoN2QYVQUnQcVG.webp"
+              alt="Throttle Therapy Nation logo"
+            />
+          </div>
+          <div class="ttn-logo-text">
+            Contact &amp; Legal Center • Throttle Therapy Nation™
+          </div>
+        </div>
+
+        <div class="ttn-kicker">Clarity, safety &amp; respect — on purpose.</div>
+
+        <h1 class="ttn-hero-heading">
+          Your direct line to the Nation — and how we protect it.
+        </h1>
+        <p class="ttn-hero-support">
+          Built by riders. Backed by clear terms, safety and respect.
+        </p>
+
+        <p class="ttn-hero-sub">
+          This is where you reach Throttle Therapy Nation™ and see the legal framework that protects our
+          community, our content, and our partners. It covers <strong>contact details, trademarks, site use,
+          privacy, and risk</strong> for a life that runs on throttle therapy.
+        </p>
+        <p class="ttn-hero-sub">
+          Whether you’re a rider, parent, park, brand, or unity partner, this page keeps expectations
+          in plain language — so we can keep building, not breaking, trust.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a href="#contact-ttn" class="ttn-btn-primary">
+            <span>Contact TTN™</span><span>➜</span>
+          </a>
+          <a href="#legal-notices" class="ttn-pill-outline ttn-pill-outline--pink">
+            Trademarks &amp; IP
+          </a>
+          <a href="#disclaimer" class="ttn-pill-outline ttn-pill-outline--orange">
+            Disclaimers &amp; Risk
+          </a>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <!-- CONTACT TTN -->
+    <section id="contact-ttn" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Contact Throttle Therapy Nation™</div>
+        <h2 class="ttn-section-title">Rider support, partnerships &amp; education.</h2>
+      </div>
+
+      <div class="ttn-card-row">
+        <!-- How we can help -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">How we can help</div>
+          <h3 class="ttn-card-heading">For riders, parents, parks &amp; brands.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Throttle Therapy Nation™ and Bentley GOALs Offroad support riders across all throttle-powered
+              lifestyles, with a special focus on SxS / UTV safety and education.
+            </p>
+            <ul>
+              <li>
+                <strong>General inquiries &amp; rider support</strong> — questions about TTN™, safety,
+                rides, or how to get involved.
+              </li>
+              <li>
+                <strong>Brands, dealers &amp; sponsors</strong> — exploring TTN™ Trusted Brand status,
+                dealer or sponsor relationships, and education-focused collaborations.
+              </li>
+              <li>
+                <strong>Events, rides &amp; collaborations</strong> — working with parks, tracks,
+                ride groups and small businesses to build safe, meaningful throttle experiences.
+              </li>
+              <li>
+                <strong>Rider education &amp; new rider guidance</strong> — on-ramp support for new or
+                returning riders, parents riding with kids, and families who want clarity before
+                they ever hit the dirt.
+              </li>
+            </ul>
+            <p class="ttn-subnote">
+              We regularly support new &amp; returning riders, parents and caregivers, SxS / UTV safety questions,
+              trail etiquette and park readiness, basic machine understanding, and pre-ride planning.
+            </p>
+          </div>
+        </article>
+
+        <!-- Who we’re looking for -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Community roles</div>
+          <h3 class="ttn-card-heading">Who we’re actively seeking.</h3>
+          <div class="ttn-card-body">
+            <p>
+              As TTN™ grows, we’re intentionally building a network of people and places who care
+              about safety, mental health, and real-world clarity more than hype.
+            </p>
+            <ul>
+              <li>Experienced riders &amp; trail leaders willing to mentor.</li>
+              <li>Family &amp; youth ride mentors who understand pacing and protection.</li>
+              <li>Community safety volunteers and terrain / education partners.</li>
+              <li>Future chapter and region leads who want to carry TTN™ culture locally.</li>
+            </ul>
+            <p class="ttn-subnote">
+              If you see yourself in those roles, reach out and introduce yourself — include where you ride,
+              your experience level, and what you’d love to help build.
+            </p>
+          </div>
+        </article>
+
+        <!-- Direct contact -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Direct contact</div>
+          <h3 class="ttn-card-heading">Reach TTN™ and Shop TTN™.</h3>
+          <div class="ttn-card-body">
+            <p>
+              <strong>Email (Primary):</strong><br />
+              <a href="mailto:bentleygoalsoffroad@throttletherapynation.com">
+                bentleygoalsoffroad@throttletherapynation.com
+              </a>
+            </p>
+            <p>
+              <strong>Phone / Text:</strong><br />
+              <a href="tel:1-859-753-0316">(859) 753-0316</a>
+            </p>
+            <p>
+              <strong>Mailing / Park Base:</strong><br />
+              Throttle Therapy Nation™<br />
+              Built on the Bentley GOALs Offroad legacy<br />
+              Wildcat Offroad Park<br />
+              East Bernstadt, Kentucky
+            </p>
+
+            <div class="ttn-band-links" style="margin-top:1rem;">
+              <a
+                class="ttn-btn-primary"
+                href="mailto:bentleygoalsoffroad@throttletherapynation.com?subject=Contact%20Throttle%20Therapy%20Nation"
+              >
+                <span>Email TTN™</span><span>➜</span>
+              </a>
+              <a
+                class="ttn-pill-outline"
+                href="https://shop.throttletherapynation.com/pages/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact Shop TTN™ (Parts &amp; Gear)
+              </a>
+            </div>
+
+            <p class="ttn-subnote">
+              Messages are typically answered within 24–48 hours whenever possible. For order-specific questions,
+              please use the Shop TTN™ contact page so we can quickly match your message with your purchase.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LEGAL NOTICES -->
+    <section id="legal-notices" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Legal notices</div>
+        <h2 class="ttn-section-title">Trademarks, copyright &amp; intellectual property.</h2>
+      </div>
+
+      <div class="ttn-card-row">
+        <!-- Brand & trademark protection -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Brand &amp; trademarks</div>
+          <h3 class="ttn-card-heading">Names, programs &amp; systems that are protected.</h3>
+          <div class="ttn-card-body">
+            <p>
+              The Throttle Therapy Nation™ name, logos, slogans, event titles, program names and rider
+              education systems are proprietary brand assets. Many are protected by common-law
+              trademark rights and/or in-progress federal registrations.
+            </p>
+            <p>
+              This includes marks such as <strong>Throttle Therapy Nation™</strong>, <strong>TTN™</strong>,
+              <strong>Throttle Therapy™</strong>, <strong>Ride. Heal. Belong.™</strong>, and program
+              names like <strong>Women of the Nation™</strong>, <strong>Future Riders™</strong>,
+              <strong>Veteran Riders™</strong>, <strong>Gold Standard Trail System™</strong>,
+              and <strong>Official Rider Map™</strong>.
+            </p>
+            <p>
+              Using these or confusingly similar names, slogans or branding elements without written permission
+              is not allowed — especially in ways that suggest you are TTN™, officially partnered with TTN™,
+              or speaking on behalf of the brand.
+            </p>
+            <p class="ttn-subnote">
+              Media, parks, brands and collaborators who wish to reference TTN™ should contact us for
+              correct usage and approvals.
+            </p>
+          </div>
+        </article>
+
+        <!-- Copyright & acceptable use -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Copyright &amp; use</div>
+          <h3 class="ttn-card-heading">How TTN™ content can — and can’t — be used.</h3>
+          <div class="ttn-card-body">
+            <p>
+              All original TTN™ content — text, graphics, logos, photos, videos, maps, GPX tracks,
+              training materials, curriculum and event concepts — is protected by copyright.
+            </p>
+            <ul>
+              <li>
+                You may view and share TTN™ content for personal, non-commercial use with brand marks intact.
+              </li>
+              <li>
+                You may <strong>not</strong> copy, sell, resell, repackage or redistribute TTN™ content
+                for commercial purposes without written consent.
+              </li>
+              <li>
+                You may <strong>not</strong> modify our content and present it as your own or as an
+                official TTN™ program, product or map.
+              </li>
+            </ul>
+            <p class="ttn-subnote">
+              We’re often willing to license or collaborate when requests align with TTN™ values, safety
+              and rider protection. When in doubt, ask.
+            </p>
+          </div>
+        </article>
+
+        <!-- Reporting & permissions -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Permissions &amp; issues</div>
+          <h3 class="ttn-card-heading">Reporting problems &amp; requesting usage rights.</h3>
+          <div class="ttn-card-body">
+            <p>
+              If you believe your copyrighted work appears on a TTN™ platform without permission, or if
+              you need licensing or usage rights for TTN™ material, contact:
+            </p>
+            <p>
+              <strong>Intellectual Property &amp; Permissions:</strong><br />
+              <a href="mailto:bentleygoalsoffroad@throttletherapynation.com">
+                bentleygoalsoffroad@throttletherapynation.com
+              </a>
+            </p>
+            <p>
+              Include a description of the material, where it appears (URL or screenshot), and your
+              contact details so we can review and respond appropriately.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TERMS & CONDITIONS -->
+    <section id="terms" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Terms &amp; conditions</div>
+        <h2 class="ttn-section-title">Using the Throttle Therapy Nation™ website.</h2>
+      </div>
+
+      <div class="ttn-card-row">
+        <!-- Basic use -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Site use</div>
+          <h3 class="ttn-card-heading">How you can use this website.</h3>
+          <div class="ttn-card-body">
+            <ul>
+              <li>
+                The site is operated by Bentley GOALs Offroad: Throttle Therapy Nation, which
+                controls the content and structure.
+              </li>
+              <li>
+                You may browse, read and share site content for personal, non-commercial purposes,
+                as long as you do not remove brand marks or misrepresent the source.
+              </li>
+              <li>
+                You may not copy, republish, sell or redistribute content for commercial use, nor
+                present TTN™ content as your original work.
+              </li>
+            </ul>
+            <p class="ttn-subnote">
+              If you do not agree with these terms, you should stop using the website and related services.
+            </p>
+          </div>
+        </article>
+
+        <!-- Cookies -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Cookies &amp; technical behavior</div>
+          <h3 class="ttn-card-heading">How the site behaves under the hood.</h3>
+          <div class="ttn-card-body">
+            <p>
+              TTN™ uses cookies and similar tools to help the website function, understand traffic,
+              and improve user experience.
+            </p>
+            <ul>
+              <li>Some cookies are essential for security and basic site operation.</li>
+              <li>Others help us analyze performance and navigation patterns.</li>
+              <li>
+                You can manage optional cookies through your browser settings, but using the site
+                implies consent to required cookies.
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Media & comments -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Media, comments &amp; links</div>
+          <h3 class="ttn-card-heading">Photos, video, posts &amp; site availability.</h3>
+          <div class="ttn-card-body">
+            <ul>
+              <li>
+                At TTN™ rides and events, photos and video may be captured in public or event spaces
+                where TTN™ is active.
+              </li>
+              <li>
+                If you appear in TTN™ photos or videos, you grant TTN™ permission to use that media
+                for community storytelling, promotion, education and brand communication.
+              </li>
+              <li>
+                Comments or posts in TTN™ spaces must remain respectful; unsafe, hateful or misleading
+                content may be removed.
+              </li>
+              <li>
+                TTN™ does not guarantee the site will always be available or error-free; outages or
+                updates may occur without notice.
+              </li>
+            </ul>
+            <p class="ttn-subnote">
+              These terms may be updated as the brand, website and services evolve. Continued use after updates
+              means you accept the revised terms.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRIVACY & DATA -->
+    <section id="privacy" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Privacy &amp; data protection</div>
+        <h2 class="ttn-section-title">How we handle your information.</h2>
+      </div>
+
+      <div class="ttn-card-row">
+        <!-- What we collect -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Data we collect</div>
+          <h3 class="ttn-card-heading">Technical details &amp; what you share.</h3>
+          <div class="ttn-card-body">
+            <ul>
+              <li>
+                Technical details like browser type, IP address, time zone and general site-use
+                patterns (pages visited, links clicked, referral sources).
+              </li>
+              <li>
+                Information you voluntarily provide — name, email address, phone number and,
+                when applicable, order or payment details processed via trusted third-party platforms.
+              </li>
+            </ul>
+            <p class="ttn-subnote">
+              We use this to respond to inquiries, maintain basic site functionality, monitor security,
+              and understand how riders engage with TTN™ content.
+            </p>
+          </div>
+        </article>
+
+        <!-- How & why -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">How &amp; why we use it</div>
+          <h3 class="ttn-card-heading">From inboxes to improvement.</h3>
+          <div class="ttn-card-body">
+            <ul>
+              <li>To respond to messages and requests sent through the site.</li>
+              <li>To monitor for potential misuse or security issues.</li>
+              <li>To analyze traffic and improve content, layout and navigation.</li>
+              <li>To fulfill services related to Shop TTN™ via our e-commerce platforms.</li>
+            </ul>
+            <p class="ttn-subnote">
+              Data may be stored or processed in the United States or other locations where our
+              service providers operate, under reasonable measures to protect your information.
+            </p>
+          </div>
+        </article>
+
+        <!-- Your rights -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Your choices</div>
+          <h3 class="ttn-card-heading">Access, correction &amp; removal.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Depending on where you live, you may have rights to access, correct, limit, or request
+              deletion of certain personal information we hold about you.
+            </p>
+            <ul>
+              <li>Request a copy of information we have about you.</li>
+              <li>Ask us to update or correct details.</li>
+              <li>Request removal of certain information where legally appropriate.</li>
+            </ul>
+            <p class="ttn-subnote">
+              To exercise these rights or ask privacy-related questions, contact<br />
+              <a href="mailto:bentleygoalsoffroad@throttletherapynation.com">
+                bentleygoalsoffroad@throttletherapynation.com
+              </a>.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="ttn-card-row" style="margin-top:1.5rem;">
+        <!-- Third-party links -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Third-party links</div>
+          <h3 class="ttn-card-heading">When TTN™ sends you elsewhere.</h3>
+          <div class="ttn-card-body">
+            <p>
+              TTN™ may link to other websites — parks, brands, map tools or partners. Those sites are
+              not controlled by TTN™, and their privacy practices and content are their own.
+            </p>
+            <p class="ttn-subnote">
+              Always review the privacy policy and terms of any third-party website or platform you
+              visit through a TTN™ link.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER & RISK -->
+    <section id="disclaimer" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Disclaimers &amp; assumption of risk</div>
+        <h2 class="ttn-section-title">Off-road riding, safety &amp; responsibility.</h2>
+      </div>
+
+      <div class="ttn-card-row">
+        <!-- General & trail risk -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">General website disclaimer</div>
+          <h3 class="ttn-card-heading">Education &amp; inspiration — not guarantees.</h3>
+          <div class="ttn-card-body">
+            <p>
+              The information on the Throttle Therapy Nation™ website is provided for general education,
+              inspiration and community-building. We work hard to keep information accurate and helpful,
+              but we cannot guarantee every detail is current or complete.
+            </p>
+            <p>
+              Your choice to use any information from this website — or to participate in activities
+              we reference — remains entirely your responsibility.
+            </p>
+
+            <p class="ttn-card-kicker" style="margin-top:0.9rem;">Off-road &amp; trail risk</p>
+            <p>
+              Off-road trail use, rock crawling, mud riding, hill climbs, deep woods riding and all
+              throttle-powered activities involve real risk, including serious injury, death, vehicle
+              damage, mechanical failure and changing terrain or weather.
+            </p>
+            <ul>
+              <li>TTN™ does not control trail conditions, maintenance or other riders’ behavior.</li>
+              <li>You are responsible for your own decisions, passengers and equipment.</li>
+              <li>Always wear appropriate safety gear and follow local laws and park rules.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Mechanical, mental health & liability -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Mechanical, wellness &amp; liability</div>
+          <h3 class="ttn-card-heading">Where our role begins — and ends.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Any mechanical tips, install notes, gear suggestions or trail-prep ideas shared by TTN™
+              are general in nature and not a substitute for professional mechanical or technical advice.
+              Always consult qualified technicians before modifying your vehicle or safety systems.
+            </p>
+            <p>
+              TTN™ also speaks openly about mental health, stress, healing and community — but we are
+              not a medical, clinical or counseling provider. If you are struggling or in crisis, contact
+              licensed professionals or emergency services in your area.
+            </p>
+
+            <p class="ttn-card-kicker" style="margin-top:0.9rem;">Limitation of liability</p>
+            <p>
+              To the fullest extent allowed by law, TTN™ and its representatives are not liable for
+              injuries, losses or damages arising from your use of the website, reliance on its content,
+              or participation in activities related to TTN™.
+            </p>
+            <p>
+              By using the site or joining TTN™-related rides or events, you confirm that you accept
+              these risks and that you are responsible for your own decisions, physical condition,
+              passengers and equipment.
+            </p>
+
+            <p class="ttn-subnote">
+              Questions about any disclaimer, policy or term on this page?<br />
+              Email
+              <a href="mailto:bentleygoalsoffroad@throttletherapynation.com">
+                bentleygoalsoffroad@throttletherapynation.com
+              </a>.
+            </p>
+          </div>
+        </article>
+
+        <!-- Quick access band -->
+        <article class="ttn-band ttn-glow" style="grid-column:1 / -1;">
+          <h2 class="ttn-band-heading">Need clarity before you ride, build or post?</h2>
+          <p class="ttn-band-body">
+            If you’re about to host an event, launch a product, film on someone else’s land, or bring a new
+            crew into the off-road world and you’re not sure how TTN™ policies apply — ask. We would rather
+            have one honest email before things get complicated than try to untangle avoidable confusion
+            after the fact.
+          </p>
+          <div class="ttn-band-links">
+            <a
+              href="mailto:bentleygoalsoffroad@throttletherapynation.com?subject=Contact%20TTN%20About%20Legal%20or%20Risk%20Questions"
+              class="ttn-btn-primary"
+            >
+              <span>Contact TTN™ With Questions</span><span>➜</span>
+            </a>
+            <a href="#top" class="ttn-pill-outline ttn-pill-outline--pink">
+              Back to Top
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — CONTACT & LEGAL CENTER (HEART STYLE) -->

@@ -1,0 +1,541 @@
+<!-- TTN — SXS OWNERSHIP GUIDE (FULL PAGE REWRITE | FINAL VERSION) -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+  --ttn-gold: #ffd400;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0,0,0,0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  padding: 3rem 1.25rem 4rem;
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, sans-serif;
+}
+
+.ttn-shell { max-width: 1200px; margin: 0 auto; }
+
+/* HERO */
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .8rem;
+  color: var(--ttn-text-muted);
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt';
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: .4rem 0 .7rem;
+}
+
+.ttn-hero-sub {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ttn-text-soft);
+  max-width: 780px;
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  border-radius: 999px;
+  margin: 1rem 0;
+}
+
+/* CTAS */
+.ttn-hero-ctas {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  padding: .85rem 2.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Michroma';
+  letter-spacing: .18em;
+  font-size: .9rem;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+
+/* Glow Redirect Buttons */
+.ttn-btn-primary {
+  background: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(255,90,150,.5);
+  transition: .15s;
+}
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255,90,150,.65);
+}
+
+/* Outline Buttons */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,.7);
+  color: var(--ttn-text);
+}
+.ttn-pill-outline:hover {
+  background: rgba(8,20,40,.95);
+  box-shadow: 0 0 18px rgba(0,198,255,.45);
+}
+
+/* SECTIONS */
+.ttn-section { margin-top: 3rem; }
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: .8rem;
+  color: var(--ttn-text-muted);
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt';
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: .3rem 0 .8rem;
+}
+
+.ttn-body-copy {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD GRID */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+@media(min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row { grid-template-columns: repeat(2,1fr); }
+}
+@media(min-width:1025px) {
+  .ttn-card-row { grid-template-columns: repeat(3,1fr); }
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0,198,255,.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border: 1px solid rgba(255,255,255,.05);
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem;
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt';
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: .6rem;
+}
+
+.ttn-card-body {
+  color: var(--ttn-text-soft);
+  line-height: 1.65;
+  font-size: .95rem;
+}
+
+/* CHECKLIST */
+.ttn-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+.ttn-checklist li {
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: .35rem;
+}
+.ttn-checklist li::before {
+  content: "✔";
+  color: var(--ttn-gold);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* CTA BAND */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(0,198,255,.18), transparent 55%),
+    linear-gradient(to bottom,#070f1c,#02040a);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: var(--ttn-shadow-soft);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt';
+  color: var(--ttn-pink);
+  margin-bottom: .7rem;
+}
+.ttn-band-body {
+  color: var(--ttn-text-soft);
+  line-height: 1.7;
+}
+
+/* MODULE LINKS */
+.ttn-module-link {
+  margin-top: .6rem;
+  display: inline-block;
+  font-size: .85rem;
+  color: var(--ttn-blue);
+}
+.ttn-module-link:hover { color: var(--ttn-pink); }
+
+</style>
+
+
+<div class="ttn-theme">
+<div class="ttn-shell">
+
+<!-- HERO -->
+<section class="ttn-hero-layout">
+  <div>
+    <div class="ttn-kicker">Start Here • Smart, Safe & Confident Ownership</div>
+    <h1 class="ttn-hero-heading">The SxS Ownership Guide</h1>
+
+    <p class="ttn-hero-sub">
+      Owning a Side-by-Side changes how you ride, how you plan, and how you show up for the people around you.
+      This guide gives every rider—brand new or returning—the foundation to operate, maintain, and handle a machine
+      with clarity, confidence, and respect for real-world trail conditions.
+    </p>
+
+    <p class="ttn-hero-sub">
+      This is not about perfection. It’s about <strong>awareness, preparation, habits, and responsibility</strong>,
+      so you can ride farther, safer, and with a crew that trusts each other.
+    </p>
+
+    <div class="ttn-underline"></div>
+
+    <div class="ttn-hero-ctas">
+      <a href="#ownership-basics" class="ttn-pill-outline ttn-pill-outline--pink">Start the Guide</a>
+      <a href="#modules" class="ttn-btn-primary">TTN Rider Modules <span>➜</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- OWNERSHIP BASICS -->
+<section id="ownership-basics" class="ttn-section">
+  <div class="ttn-section-label">ownership foundations</div>
+  <h2 class="ttn-section-title">What SxS Ownership Really Means</h2>
+
+  <p class="ttn-body-copy">
+    Side-by-Sides are capable, powerful, and unforgiving when approached casually. Ownership means understanding
+    the systems you rely on, the realities of terrain, the limits of design, and the responsibility you have to
+    yourself and your riders.
+  </p>
+</section>
+
+<!-- 3 PILLARS -->
+<section class="ttn-section">
+  <div class="ttn-card-row">
+
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">1. Know Your Machine</h3>
+      <div class="ttn-card-body">
+        Controls, driveline, weak points, maintenance cycles, belts, fluids, and warning indicators.
+        Ownership begins with familiarity—not assumptions.
+      </div>
+    </article>
+
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">2. Prepare With Intention</h3>
+      <div class="ttn-card-body">
+        Pre-ride planning, packing logic, weather, timing, radios, route selection, and risk stacking.
+        Good rides start before you ever turn the key.
+      </div>
+    </article>
+
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">3. Ride With Structure</h3>
+      <div class="ttn-card-body">
+        Group roles, spacing, pace, stopping culture, clarity signals, and accountability.
+        A structured group is a safe group.
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FIRST 30 DAYS -->
+<section class="ttn-section">
+  <div class="ttn-section-label">timeline</div>
+  <h2 class="ttn-section-title">Your First 30 Days of Ownership</h2>
+
+  <p class="ttn-body-copy">
+    The first month sets 90% of your long-term habits. Start small, build awareness, and follow a realistic sequence:
+  </p>
+
+  <div class="ttn-card-row">
+
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Week 1 — Familiarization</h3>
+      <div class="ttn-card-body">
+        <ul class="ttn-checklist">
+          <li>Learn controls & seating</li>
+          <li>Review safety features</li>
+          <li>Understand fluids & belts</li>
+          <li>Practice gentle throttle response</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Week 2 — Basic Terrain</h3>
+      <div class="ttn-card-body">
+        <ul class="ttn-checklist">
+          <li>Ride marked, easy trails</li>
+          <li>Practice communication signals</li>
+          <li>Understand momentum & line choice</li>
+          <li>Learn when to stop or reset</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Week 3–4 — Real Conditions</h3>
+      <div class="ttn-card-body">
+        <ul class="ttn-checklist">
+          <li>Introduce mild climbs and descents</li>
+          <li>Build recovery awareness</li>
+          <li>Ride in controlled groups</li>
+          <li>End on confidence, not exhaustion</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- 12 MODULE SECTION -->
+<section id="modules" class="ttn-section">
+  <div class="ttn-section-label">TTN rider education</div>
+  <h2 class="ttn-section-title">The 12 TTN Rider Education Modules</h2>
+
+  <p class="ttn-body-copy">
+    These modules are condensed from TTN’s full Rider Education curriculum. Each one expands a core principle of
+    safe, structured, confident riding. PDF download links can be added below each module.
+  </p>
+</section>
+
+<section class="ttn-section">
+  <div class="ttn-card-row">
+
+    <!-- MODULE 1 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 1 — New Rider Foundations</h3>
+      <div class="ttn-card-body">
+        Core skills, expectations, mindset, and the real starting point for confident riding.
+        <br><br>
+        <a class="ttn-module-link" href="#" target="_blank">
+          <!-- PDF LINK FOR MODULE 1 -->
+          Download Module 1 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 2 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 2 — Riding With Kids & Families</h3>
+      <div class="ttn-card-body">
+        Safety, pace, communication, expectations, and family-first planning.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 2 -->
+          Download Module 2 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 3 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 3 — Machine Ownership Essentials</h3>
+      <div class="ttn-card-body">
+        Maintenance, wear patterns, belts, fluids, recurring checks, and machine care.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 3 -->
+          Download Module 3 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 4 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 4 — Pre-Ride Planning & Preparation</h3>
+      <div class="ttn-card-body">
+        Route selection, weather, timing, packing, communication tools, and group structure.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 4 -->
+          Download Module 4 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 5 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 5 — Trail Etiquette & Group Communication</h3>
+      <div class="ttn-card-body">
+        Roles, spacing, signals, accountability, stopping rules, and culture.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 5 -->
+          Download Module 5 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 6 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 6 — After-Action Checks & Ride Debriefs</h3>
+      <div class="ttn-card-body">
+        Post-ride checks, bolt inspection, wear review, and performance reflection.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 6 -->
+          Download Module 6 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 7 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 7 — Trail Clarity, Ratings & Terrain Reality</h3>
+      <div class="ttn-card-body">
+        Understanding terrain, park differences, TTN rating logic, and Gold Standard clarity.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 7 -->
+          Download Module 7 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 8 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 8 — On-Site Education & Real-Time Coaching</h3>
+      <div class="ttn-card-body">
+        Practical, in-the-moment learning and structured coaching touchpoints.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 8 -->
+          Download Module 8 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 9 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 9 — Unity Messaging for Riders & Parks</h3>
+      <div class="ttn-card-body">
+        How TTN aligns riders and parks through clarity, communication, and expectations.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 9 -->
+          Download Module 9 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 10 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 10 — Safety Sheets & Critical Protocols</h3>
+      <div class="ttn-card-body">
+        Standardized safety practices for riders, parks, and builders.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 10 -->
+          Download Module 10 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 11 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 11 — Unity Messaging for Brands, Builders & Educators</h3>
+      <div class="ttn-card-body">
+        How industry partners align under TTN standards.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 11 -->
+          Download Module 11 ➜
+        </a>
+      </div>
+    </article>
+
+    <!-- MODULE 12 -->
+    <article class="ttn-card">
+      <h3 class="ttn-card-heading">Module 12 — Co-Branded Education & Industry Alignment</h3>
+      <div class="ttn-card-body">
+        Building shared education programs with consistent messaging.
+        <br><br>
+        <a class="ttn-module-link" href="#">
+          <!-- PDF LINK FOR MODULE 12 -->
+          Download Module 12 ➜
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FINAL CTA BAND -->
+<section class="ttn-band">
+  <h2 class="ttn-band-heading">Ride With Clarity. Ride With Confidence. Ride With the Nation.</h2>
+  <p class="ttn-band-body">
+    The best riders aren’t fearless—they’re prepared.  
+    The best machines aren’t indestructible—they’re maintained.  
+    The best groups aren’t the fastest—they’re the most structured.  
+    The Nation is built on responsibility, skill, education, and unity.  
+    Step into the next chapter of your rider journey.
+  </p>
+
+  <div class="ttn-hero-ctas">
+    <a href="/join-the-nation.html" class="ttn-btn-primary">Join the Nation <span>➜</span></a>
+    <a href="https://shop.throttletherapynation.com" class="ttn-pill-outline ttn-pill-outline--pink">Shop Trusted Gear</a>
+    <a href="#top" class="ttn-pill-outline">Back to Top</a>
+  </div>
+</section>
+
+</div></div>
+<!-- END TTN — SXS OWNERSHIP GUIDE -->

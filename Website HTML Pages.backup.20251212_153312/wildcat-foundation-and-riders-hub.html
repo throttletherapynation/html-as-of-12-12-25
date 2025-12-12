@@ -1,0 +1,682 @@
+<!-- TTN — WILDCAT RIDERS HUB (MATCHES "THE NATION" LAYOUT) -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+        <a
+          href="/park-rankings-and-directory.html"
+          class="ttn-pill-outline ttn-pill-outline--orange"
+          target="_top"
+        >
+          Wildcat in 2025 Rankings
+        </a>
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ttn-theme a {
+  color: var(--ttn-blue);
+  text-decoration: none;
+}
+.ttn-theme a:hover {
+  color: var(--ttn-pink);
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Circle logo with glow */
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.35), transparent 60%),
+    radial-gradient(circle at bottom, rgba(0,198,255,0.4), #020309 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TTN logo image inside the circle */
+.ttn-logo-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO TEXT */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 760px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+/* HERO LAYOUT */
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* CTAs */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.5);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.65);
+}
+
+/* Outlined pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADER */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD ROWS */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+  flex: 1;
+}
+
+.ttn-card-body ul {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+.ttn-card-body li + li {
+  margin-top: 0.2rem;
+}
+
+/* BANDS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* CHECKLIST */
+.ttn-checklist {
+  margin-top: 0.8rem;
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.96rem;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-checklist li {
+  margin-bottom: 0.35rem;
+  padding-left: 1.4rem;
+  position: relative;
+}
+.ttn-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  color: #ffd400;
+}
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO -->
+    <section class="ttn-hero-layout" id="top">
+      <div>
+        <div class="ttn-logo-row">
+          <div class="ttn-logo-mark">
+            <img
+              src="https://assets.zyrosite.com/sdnMdPjG6N37IB0O/b82b5a17-9b9b-4ec7-8e6b-cc65e3e5ecee_4_5005_c-W2zSHbHs8suhSuJE.jpeg"
+              alt="Throttle Therapy Nation logo"
+              class="ttn-logo-img"
+            />
+          </div>
+          <div class="ttn-logo-text">
+            Wildcat Riders Hub • TTN x Wildcat Offroad
+          </div>
+        </div>
+
+        <div class="ttn-kicker">
+          Throttle Therapy Nation™ • Park-Specific Rider Hub
+        </div>
+
+        <h1 class="ttn-hero-heading">
+          Wildcat Riders Hub
+        </h1>
+        <p class="ttn-hero-support">
+          Ride Wildcat with clarity, community, and real-world expectations.
+        </p>
+
+        <p class="ttn-hero-sub">
+          The Wildcat Riders Hub is for the <strong>riders, families, crews and leaders</strong> who call
+          Wildcat Offroad home base — or want to. This is where TTN™ brings
+          <strong>clarity, culture and community</strong> together around one park, so your trips feel
+          more like “we’re glad we came” and less like “we survived that somehow.”
+        </p>
+
+        <p class="ttn-hero-sub">
+          Use this page alongside the
+          <a href="/park-rankings-and-directory.html" target="_top">
+            TTN™ 2025 Parks &amp; Rankings
+          </a>
+          to plan smarter Wildcat trips, connect with the community, and ride in a way that protects your
+          people, your rig and your headspace.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a
+            href="https://www.facebook.com/groups/wildcatoffroadofficialridershub/"
+            class="ttn-btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Join Wildcat Riders Hub</span><span>➜</span>
+          </a>
+
+          <a
+            href="/park-rankings-and-directory.html"
+            class="ttn-pill-outline ttn-pill-outline--orange"
+            target="_top"
+          >
+            Wildcat in 2025 Rankings
+          </a>
+
+          <a href="#before-you-roll" class="ttn-pill-outline ttn-pill-outline--pink">
+            Before You Roll In
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT THIS HUB IS -->
+    <section class="ttn-section" id="hub">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">what this hub is</div>
+        <h2 class="ttn-section-title">Your Park-Specific Home Base for Wildcat.</h2>
+        <p class="ttn-body-copy">
+          This isn’t just a hype page. The Wildcat Riders Hub exists so you can pair
+          <strong>real-world Wildcat intel</strong> with TTN™ culture — clarity, structure, and respect —
+          and build trips that match your crew, not just your social feed.
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">riders & crews</div>
+          <h3 class="ttn-card-heading">For the Ones Actually on the Trail.</h3>
+          <div class="ttn-card-body">
+            <p>
+              You’re the ones behind the wheel, in the passenger seat, spotting lines and stacking rocks.
+              This hub gives you a place to anchor trip planning, expectation setting and post-ride debriefs.
+            </p>
+            <ul>
+              <li>Connect with riders who know Wildcat’s patterns, not just its photos.</li>
+              <li>Talk through lines, recovery, weather and realistic “first-time at Wildcat” expectations.</li>
+              <li>Pair TTN™ ride culture with the way this specific park actually rides.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">families & support</div>
+          <h3 class="ttn-card-heading">The People Who Carry the Riders.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Spouses, kids, grandparents, support crews — you are why most riders can even be at Wildcat.
+              This hub honors your role in how trips are planned, paced and called.
+            </p>
+            <ul>
+              <li>Ask real questions about noise, fatigue, bathrooms and camp layout.</li>
+              <li>Plan kid-friendly zones, rest windows and realistic time on the trail.</li>
+              <li>Use Wildcat intel to decide when to ride along and when to cheer from camp.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">parks & partners</div>
+          <h3 class="ttn-card-heading">Doing Our Part Beside the Park.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Wildcat Offroad carries the responsibility for the land and the rules. TTN™ comes alongside
+              with <strong>education, mapping clarity and culture</strong> so riders show up ready to match that.
+            </p>
+            <ul>
+              <li>Point riders to official rules, maps and updates.</li>
+              <li>Support a culture that protects staff, land and each other.</li>
+              <li>Use TTN™ programs to build leaders who serve the park, not just themselves.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEFORE YOU ROLL INTO WILDCAT -->
+    <section class="ttn-band ttn-glow" id="before-you-roll">
+      <h2 class="ttn-band-heading">Before You Roll Into Wildcat.</h2>
+      <p class="ttn-band-body">
+        Wildcat is incredible — and it’s real. Real climbs, real breakage factor, real variables when weather,
+        traffic and fatigue stack up. This isn’t to scare you. It’s to give you a
+        <strong>clear pre-trip checklist</strong> so your crew can ride on purpose instead of on luck.
+      </p>
+
+      <ul class="ttn-checklist">
+        <li>
+          <strong>Know the current conditions.</strong> Check weather, recent rain patterns and official Wildcat
+          updates so you aren’t surprised by mud, closures or park changes.
+        </li>
+        <li>
+          <strong>Match the trip to your least-experienced rider.</strong> Plan routes, pace and ride windows
+          around the person with the least seat time, not the biggest build.
+        </li>
+        <li>
+          <strong>Set “call it” rules before you unload.</strong> Decide who can say “we’re done for today”
+          and make sure everyone knows that voice will be respected.
+        </li>
+        <li>
+          <strong>Align rigs, radios and recovery.</strong> Double-check belts, fluids, tire condition,
+          basic tools and comms — especially if you’re exploring deeper sections of the park.
+        </li>
+        <li>
+          <strong>Plan for camp and town, not just trails.</strong> Think about fuel, food, bathrooms, sleep
+          and how long you’re actually okay being away from base.
+        </li>
+      </ul>
+
+      <div class="ttn-band-links">
+        <a
+          href="/park-rankings-and-directory.html"
+          class="ttn-pill-outline ttn-pill-outline--orange"
+          target="_top"
+        >
+          See Wildcat in TTN™ Rankings
+        </a>
+        <a
+          href="https://www.facebook.com/groups/wildcatoffroadofficialridershub/"
+          class="ttn-btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Ask the Wildcat Community</span><span>➜</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- COMMUNITY & RIDE CULTURE -->
+    <section class="ttn-section" id="culture">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">ride culture</div>
+        <h2 class="ttn-section-title">How TTN™ Rides Wildcat Differently.</h2>
+        <p class="ttn-body-copy">
+          TTN™ isn’t trying to be the loudest rig in the park. We’re building a pattern at Wildcat where
+          <strong>clarity, communication and care</strong> come first — so people can keep riding, not just
+          keep posting.
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">structure</div>
+          <h3 class="ttn-card-heading">Leads, Mid-Group, Sweeps.</h3>
+          <div class="ttn-card-body">
+            <p>
+              We use intentional group structure — especially at a park like Wildcat — so no one is guessing
+              who’s watching which section of the line.
+            </p>
+            <ul>
+              <li>Clear leads who know the plan, the park and the group’s limits.</li>
+              <li>Mid-group anchors watching spacing, pace and headspace.</li>
+              <li>Sweeps who treat “getting everyone back to camp” as success, not ego.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">communication</div>
+          <h3 class="ttn-card-heading">Radios, Hand Signals &amp; Honesty.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Wildcat terrain and traffic can change fast. Communication is how we keep people from getting
+              overwhelmed, lost or pushed past their capacity.
+            </p>
+            <ul>
+              <li>Basic, shared radio language before wheels move.</li>
+              <li>Simple hand signals when radios fail or batteries die.</li>
+              <li>An expectation that saying “I’m not okay” is a strength, not a burden.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">space to grow</div>
+          <h3 class="ttn-card-heading">Room for New &amp; Nervous Riders.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Wildcat is often where riders test what’s next. We make sure there’s a place for new drivers,
+              returning riders and the ones who are rebuilding after hard chapters.
+            </p>
+            <ul>
+              <li>Using easier lines and sections as “classrooms,” not just warm-up.</li>
+              <li>Cheering progression, not pressure, when someone says “not today.”</li>
+              <li>Pairing seat time with real conversations about fear, fatigue and risk.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW TO PLUG IN -->
+    <section class="ttn-band ttn-glow" id="connect">
+      <h2 class="ttn-band-heading">Ways to Plug Into the Wildcat Hub Right Now.</h2>
+      <p class="ttn-band-body">
+        You don’t need a full-season pass, a race build or a perfect life chapter to show up here. Start with
+        one step — one conversation, one ride, one honest question about what’s really on your plate.
+      </p>
+
+      <div class="ttn-band-links">
+        <a
+          href="https://www.facebook.com/groups/wildcatoffroadofficialridershub/"
+          class="ttn-btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Join the Wildcat Riders Hub</span><span>➜</span>
+        </a>
+
+        <a
+          href="https://www.facebook.com/groups/throttle.therapy.nation/"
+          class="ttn-pill-outline ttn-pill-outline--pink"
+          target="_blank"
+          rel="noopener"
+        >
+          Throttle Therapy Nation™ Group
+        </a>
+
+        <a
+          href="/ttn-national-rider-education-center.html"
+          class="ttn-pill-outline ttn-pill-outline--orange"
+          target="_top"
+        >
+          TTN Rider Education Center
+        </a>
+
+        <a
+          href="mailto:ride.heal.belong@gmail.com"
+          class="ttn-pill-outline"
+        >
+          Email TTN™ About Wildcat
+        </a>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">See You at Wildcat — One Trip at a Time.</h2>
+      <p class="ttn-band-body">
+        Wildcat Offroad is woven into the story of Throttle Therapy Nation™ — from first trips to hardest
+        chapters to the rides that helped people remember they’re still here, still breathing, still moving.
+        This hub is part of how we honor that.
+      </p>
+      <p class="ttn-band-body" style="margin-top:0.7rem;">
+        However you plug in — guiding, learning, wrenching, cheering, spotting or just walking the grounds to
+        see if this might be “your” place someday — there is room for you here.
+      </p>
+
+      <div class="ttn-band-links">
+        <a href="#top" class="ttn-pill-outline">
+          Back to Top
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — WILDCAT RIDERS HUB -->
