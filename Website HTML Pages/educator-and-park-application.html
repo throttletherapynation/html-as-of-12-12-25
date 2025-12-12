@@ -1,0 +1,858 @@
+<!-- TTN — EDUCATOR & PARK APPLICATION GATEWAY PAGE -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LINKS */
+.ttn-theme a {
+  color: var(--ttn-blue);
+  text-decoration: none;
+}
+.ttn-theme a:hover {
+  color: var(--ttn-pink);
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background: #020309;
+}
+
+/* Simple TTN bubble text (no image) */
+.ttn-logo-mark::before {
+  content: "TTN";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* TEXT-ONLY HERO */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 760px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+.ttn-hero-layout {
+  margin-bottom: 3rem;
+}
+
+/* CTAs */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.5);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.65);
+}
+
+/* Outline pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADERS */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD GRID */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.05rem;
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+}
+
+/* LINK CTA IN CARDS */
+.ttn-link-cta {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--ttn-text);
+  text-decoration: none;
+}
+
+.ttn-link-cta span:last-child {
+  transition: transform 0.18s ease-out;
+}
+.ttn-link-cta:hover span:last-child {
+  transform: translateX(3px);
+}
+
+/* BANDS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* CHECKLIST */
+.ttn-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.ttn-checklist li {
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ttn-orange);
+  font-size: 0.95rem;
+}
+
+/* FORM STYLES */
+.ttn-form {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.ttn-form-row {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .ttn-form-row--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ttn-form-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-form-control {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(3, 8, 20, 0.9);
+  padding: 0.75rem 1rem;
+  font-family: 'Michroma', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: var(--ttn-text);
+  outline: none;
+}
+
+.ttn-form-control::placeholder {
+  color: var(--ttn-text-muted);
+}
+
+.ttn-form-control:focus {
+  border-color: var(--ttn-blue);
+  box-shadow: 0 0 0 1px rgba(0, 198, 255, 0.4);
+}
+
+.ttn-form-textarea {
+  border-radius: 20px;
+  min-height: 140px;
+  resize: vertical;
+}
+
+.ttn-form-helper {
+  font-size: 0.75rem;
+  color: var(--ttn-text-soft);
+  opacity: 0.85;
+  margin-top: 0.25rem;
+}
+
+.ttn-form-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-theme {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .ttn-hero-ctas {
+    flex-direction: column;
+  }
+
+  .ttn-btn-primary,
+  .ttn-pill-outline {
+    width: 100%;
+  }
+
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO -->
+    <section class="ttn-hero-layout">
+        <div class="ttn-logo-text">
+          TTN Educator &amp; Park Application Gateway
+        </div>
+      </div>
+
+      <div>
+        <div class="ttn-kicker">For serious educator &amp; park conversations, not random DMs.</div>
+
+        <h1 class="ttn-hero-heading">
+          Educators &amp; Parks, Let’s Build This Intentionally.
+        </h1>
+        <p class="ttn-hero-support">
+          Educator Program • Park Partners • Rider Education Initiatives
+        </p>
+
+        <p class="ttn-hero-sub">
+          The Educator &amp; Park Application Gateway is where <strong>guides, instructors, park owners, staff teams
+          and rider education programs</strong> raise their hand and say, “We want to help riders
+          <strong>Ride. Heal. Belong.™</strong> with more clarity and care.” This page keeps those conversations in one
+          place so nothing important gets lost in the noise.
+        </p>
+        <p class="ttn-hero-sub">
+          If you’re a <strong>certified brand, supplier, sponsor or mentored partner</strong>, please use the separate
+          TTN Industry &amp; Brands Gateway. This space is specifically for <strong>educators and parks</strong>.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <!-- UPDATED: Hero button now goes to educator application page -->
+          <a href="https://www.throttletherapynation.com/educator-application.html" class="ttn-btn-primary">
+            <span>Start My Application</span><span>➜</span>
+          </a>
+          <a
+            href="/ttn-educator-program"
+            class="ttn-pill-outline ttn-pill-outline--pink"
+            target="_top"
+          >
+            Learn About the Educator Program
+          </a>
+          <a
+            href="/park-rankings-and-directory"
+            class="ttn-pill-outline ttn-pill-outline--orange"
+            target="_top"
+          >
+            See Parks &amp; Rankings
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW THIS WORKS -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">how this works</div>
+        <h2 class="ttn-section-title">Pick the Lane That Matches How You Carry Riders.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-body-copy">
+        <p>
+          This isn’t a “spray and pray” contact form. Each lane below is designed for a specific type of educator or
+          park partner so we can honor your time, your story and the responsibility you carry. Pick the one that fits
+          best, include the information requested and we’ll respond as we’re able.
+        </p>
+        <p style="margin-top:0.7rem;">
+          You can <strong>email using the subject lines</strong> in each lane, <strong>use the application form</strong>
+          below — or both.
+        </p>
+      </div>
+    </section>
+
+    <!-- APPLICATION LANES -->
+    <section id="lanes" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">application lanes</div>
+        <h2 class="ttn-section-title">Start Here Based on Your Educator or Park Role.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-card-row">
+        <!-- Individual Educator / Guide -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">individual educators &amp; guides</div>
+          <h3 class="ttn-card-heading">TTN Educator / Guide Application</h3>
+          <p class="ttn-card-body">
+            For guides, instructors, mid-group anchors, sweep riders, camp hosts and leaders who are
+            <strong>already carrying riders</strong> and want to align with TTN language, safety culture and the
+            Educator Program.
+          </p>
+          <!-- UPDATED: Link now goes to educator application page instead of mailto -->
+          <a
+            class="ttn-link-cta"
+            href="https://www.throttletherapynation.com/educator-application.html"
+          >
+            <span>Apply as a TTN Educator</span><span>➜</span>
+          </a>
+        </article>
+
+        <!-- Parks / Destinations (Initiative) -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">parks &amp; destinations</div>
+          <h3 class="ttn-card-heading">Park Partner &amp; Initiative Application</h3>
+          <p class="ttn-card-body">
+            For park owners and destination managers who want to be part of TTN’s
+            <strong>park initiative, clarity work, education and culture-building</strong> — including potential
+            alignment toward “Gold Standard” flagship status over time.
+          </p>
+          <a
+            class="ttn-link-cta"
+            href="https://claude.ai/public/artifacts/afecbeeb-11bf-49b2-8ddc-1572598b6052"
+          >
+            <span>Apply as a Park Partner</span><span>➜</span>
+          </a>
+        </article>
+
+        <!-- Park-Based Staff Training -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">park-based rider education</div>
+          <h3 class="ttn-card-heading">Staff Training &amp; Education Days</h3>
+          <p class="ttn-card-body">
+            For parks that want TTN support with <strong>staff training, safety briefings, scripts, check-in flow,
+            family-/youth-aware messaging and on-site education events</strong> built around Ride. Heal. Belong.™
+          </p>
+          <a
+            class="ttn-link-cta"
+            href="mailto:ride.heal.belong@gmail.com?subject=TTN%20Park%20Staff%20Training%20/%20Education%20Inquiry"
+          >
+            <span>Start a Staff Training Conversation</span><span>➜</span>
+          </a>
+        </article>
+
+        <!-- Rider Education Programs / Shops -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">rider education programs</div>
+          <h3 class="ttn-card-heading">Schools, Shops &amp; Training Programs</h3>
+          <p class="ttn-card-body">
+            For <strong>riding schools, shops, clinics, nonprofits and training programs</strong> that teach riders and
+            want to align curriculum, safety standards and language with TTN’s Educator framework.
+          </p>
+          <a
+            class="ttn-link-cta"
+            href="https://claude.ai/public/artifacts/afecbeeb-11bf-49b2-8ddc-1572598b6052"
+          >
+            <span>Apply as a Rider Education Program</span><span>➜</span>
+          </a>
+        </article>
+
+        <!-- Something Else / Not Sure -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">not sure where you fit?</div>
+          <h3 class="ttn-card-heading">“This Doesn’t Quite Fit a Box…”</h3>
+          <p class="ttn-card-body">
+            If you carry something that doesn’t fit neatly into one of these lanes — but you know you’re supposed to
+            be part of what TTN is building in <strong>education, rider care or park culture</strong> — you can still
+            reach out. Share where you’re coming from and what you’re hoping to build or support.
+          </p>
+          <a
+            class="ttn-link-cta"
+            href="mailto:ride.heal.belong@gmail.com?subject=TTN%20Educator%20/%20Park%20Gateway%20-%20Other"
+          >
+            <span>Email TTN With Your Story</span><span>➜</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT TO INCLUDE IN YOUR EMAIL -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">What to Include So We Can Respond Well.</h2>
+      <p class="ttn-band-body">
+        You don’t have to write a novel, but a little clarity goes a long way. Use the subject lines above and include
+        as much of the following as you’re able:
+      </p>
+
+      <ul class="ttn-checklist">
+        <li>Your name and role (guide, instructor, owner, manager, educator, director, etc.).</li>
+        <li>Your park, company, program, shop or organization name.</li>
+        <li>Website or main social profile.</li>
+        <li>Where you’re located and who you primarily serve (families, veterans, new riders, etc.).</li>
+        <li>Which TTN lane you’re interested in (Individual Educator, Park Partner, Staff Training, Education Program, etc.).</li>
+        <li>Why you feel aligned with <strong>Ride. Heal. Belong.™</strong> and the heart of TTN.</li>
+        <li>Any specific ideas, needs, or questions you want us to consider.</li>
+      </ul>
+    </section>
+
+    <!-- APPLICATION FORM (EDUCATOR & PARK-FOCUSED) -->
+    <section class="ttn-band ttn-glow" id="ttn-application-form">
+      <h2 class="ttn-band-heading">Submit Your Educator or Park Application.</h2>
+      <p class="ttn-band-body">
+        If one of the lanes above fits who you are and how you carry riders, you can use this form to send in
+        your application. Share as much as you’re comfortable with — it helps us understand your world, your capacity,
+        and how we might move forward together.
+      </p>
+
+      <form class="ttn-form" action="#" method="post">
+        <!-- Row 1: Name + Email -->
+        <div class="ttn-form-row ttn-form-row--two">
+          <div>
+            <label class="ttn-form-label" for="ttn-name">Name</label>
+            <input
+              id="ttn-name"
+              name="name"
+              type="text"
+              class="ttn-form-control"
+              placeholder="Your full name"
+              required
+            />
+          </div>
+          <div>
+            <label class="ttn-form-label" for="ttn-email">Email</label>
+            <input
+              id="ttn-email"
+              name="email"
+              type="email"
+              class="ttn-form-control"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Row 2: Role + Organization -->
+        <div class="ttn-form-row ttn-form-row--two">
+          <div>
+            <label class="ttn-form-label" for="ttn-role">Your Role</label>
+            <input
+              id="ttn-role"
+              name="role"
+              type="text"
+              class="ttn-form-control"
+              placeholder="Guide, instructor, owner, park manager, etc."
+            />
+          </div>
+          <div>
+            <label class="ttn-form-label" for="ttn-org">Park / Program / Organization</label>
+            <input
+              id="ttn-org"
+              name="organization"
+              type="text"
+              class="ttn-form-control"
+              placeholder="Who you represent"
+            />
+          </div>
+        </div>
+
+        <!-- Row 3: Website + Location -->
+        <div class="ttn-form-row ttn-form-row--two">
+          <div>
+            <label class="ttn-form-label" for="ttn-website">Website or Main Social Link</label>
+            <input
+              id="ttn-website"
+              name="website"
+              type="url"
+              class="ttn-form-control"
+              placeholder="https:// or main profile URL"
+            />
+          </div>
+          <div>
+            <label class="ttn-form-label" for="ttn-location">Location</label>
+            <input
+              id="ttn-location"
+              name="location"
+              type="text"
+              class="ttn-form-control"
+              placeholder="City, State / Region"
+            />
+          </div>
+        </div>
+
+        <!-- Row 4: Lane select -->
+        <div class="ttn-form-row">
+          <div>
+            <label class="ttn-form-label" for="ttn-lane">Which TTN lane fits you best?</label>
+            <select id="ttn-lane" name="lane" class="ttn-form-control" required>
+              <option value="">Select one...</option>
+              <option value="individual-educator">Individual Educator / Guide / Leader</option>
+              <option value="park-partner">Park Partner &amp; Initiative</option>
+              <option value="park-staff-training">Park-Based Staff Training / Education Days</option>
+              <option value="education-program">Rider Education Program / School / Shop</option>
+              <option value="other">Something Else / Not Sure</option>
+            </select>
+            <div class="ttn-form-helper">
+              This helps us route your application to the right place.
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 5: Story / Details -->
+        <div class="ttn-form-row">
+          <div>
+            <label class="ttn-form-label" for="ttn-message">
+              Tell us your story &amp; how you currently carry riders.
+            </label>
+            <textarea
+              id="ttn-message"
+              name="message"
+              class="ttn-form-control ttn-form-textarea"
+              placeholder="Share what you carry, who you serve, how you teach or host riders, and what you hope alignment with TTN could look like."
+              required
+            ></textarea>
+            <div class="ttn-form-helper">
+              You don’t have to share everything here, but the more context you provide, the better we can respond.
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 6: Optional notes -->
+        <div class="ttn-form-row">
+          <div>
+            <label class="ttn-form-label" for="ttn-notes">Anything else we should know? (Optional)</label>
+            <textarea
+              id="ttn-notes"
+              name="notes"
+              class="ttn-form-control ttn-form-textarea"
+              placeholder="Timing constraints, sensitive context, previous conversations with TTN, specific events or ideas you’re exploring, etc."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="ttn-form-actions">
+          <button type="submit" class="ttn-btn-primary">
+            <span>Submit Application</span><span>➜</span>
+          </button>
+          <a
+            href="mailto:ride.heal.belong@gmail.com?subject=TTN%20Educator%20/%20Park%20Application%20-%20Attachments%20or%20Follow-Up"
+            class="ttn-pill-outline"
+          >
+            Send Additional Details by Email
+          </a>
+        </div>
+      </form>
+
+      <p class="ttn-band-body" style="margin-top:1.25rem; font-size:0.9rem;">
+        <strong>Note:</strong> If your platform requires a special form handler or embed code, you can point this form
+        to that endpoint by updating the <code>action="#"</code> attribute above. Educators and parks can always use
+        the email links in the lanes section if that’s easier.
+      </p>
+    </section>
+
+    <!-- EXPECTATIONS / BOUNDARIES -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">A Quick Word About Boundaries &amp; Capacity.</h2>
+      <p class="ttn-band-body">
+        TTN is intentionally built to grow in a way that still protects riders, families and the people carrying the
+        work. That means we may not be able to move as fast as every opportunity that comes in — and we won’t say yes
+        to educator or park partnerships that don’t align with the heart of the Nation, even if they look impressive
+        on paper.
+      </p>
+      <p class="ttn-band-body">
+        If you don’t hear back immediately, it doesn’t mean your story doesn’t matter. It means we’re honoring the
+        weight of what’s already on the table while we continue to build what’s next.
+      </p>
+      <p class="ttn-band-body" style="margin-top:0.6rem; font-size:0.9rem;">
+        If you’re a <strong>brand, supplier, sponsor or mentored partner</strong>, please use the separate
+        TTN Industry &amp; Brands Gateway so educator and park applications don’t get buried.
+      </p>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">If You’re Here, You’re Already Carrying a Lot.</h2>
+      <p class="ttn-band-body">
+        Whether you’re leading rides, running a park, designing staff training, or quietly teaching future riders in
+        the background — you’re part of why this Gateway exists. We can’t promise every door will open right away, but
+        we can promise we’ll treat your story, your time and your people with respect.
+      </p>
+      <div class="ttn-band-links">
+        <a
+          href="mailto:ride.heal.belong@gmail.com?subject=TTN%20Educator%20/%20Park%20Application%20Gateway%20-%20General%20Inquiry"
+          class="ttn-btn-primary"
+        >
+          <span>Email TTN</span><span>➜</span>
+        </a>
+        <a
+          href="/ttn-educator-program"
+          class="ttn-pill-outline ttn-pill-outline--pink"
+          target="_top"
+        >
+          TTN Educator Program
+        </a>
+        <a
+          href="/park-rankings-and-directory"
+          class="ttn-pill-outline"
+          target="_top"
+        >
+          Parks &amp; Rankings
+        </a>
+        <a
+          href="/ttn-application-gateway"
+          class="ttn-pill-outline ttn-pill-outline--orange"
+          target="_top"
+        >
+          Brands, Sponsors &amp; Suppliers Gateway
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — EDUCATOR & PARK APPLICATION GATEWAY PAGE -->

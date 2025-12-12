@@ -1,0 +1,559 @@
+<!-- TTN — THE HEART OF TTN PAGE – ONE-BLOCK FULL LAYOUT -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background: #020309;
+}
+
+.ttn-logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO TEXT */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 760px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+/* HERO LAYOUT */
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* HERO MEDIA */
+.ttn-hero-media {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 0 40px rgba(255, 0, 125, 0.6);
+  min-height: 260px;
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.2), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+/* neon backing glow */
+.ttn-hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  border-radius: 40px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.8),
+    rgba(0, 198, 255, 0.6),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.ttn-hero-media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+.ttn-hero-media-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at bottom right, rgba(0,198,255,0.22), transparent 55%);
+}
+
+/* CTAs */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.5);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.65);
+}
+
+/* Outlined pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADER */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD ROWS */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+  flex: 1;
+}
+
+/* BANDS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO: THE HEART -->
+    <section class="ttn-hero-layout">
+      <div>
+        <div class="ttn-logo-row">
+          <div class="ttn-logo-mark">
+            <img src="https://cdn.shopify.com/s/files/1/0762/8632/8889/files/B82B5A17-9B9B-4EC7-8E6B-CC65E3E5ECEE_4_5005_c.jpg?v=1765151384" alt="Throttle Therapy Nation logo" />
+          </div>
+          <div class="ttn-logo-text">
+            The Heart of Throttle Therapy Nation™
+          </div>
+        </div>
+
+        <div class="ttn-kicker">A rider, a family, a community — and a choice not to quit.</div>
+
+        <h1 class="ttn-hero-heading">
+          This Was Built So No One Has to Carry It Alone.
+        </h1>
+        <p class="ttn-hero-support">
+          Ride. Heal. Belong.™ started as survival, not branding.
+        </p>
+
+        <p class="ttn-hero-sub">
+          The Heart of TTN is a story about a rider, a husband, a family, and a community that refused to let grief,
+          chaos, and fear have the final say. What you see now as Throttle Therapy Nation™ is the result of people
+          locking arms so others wouldn’t have to walk the same roads isolated, misunderstood, or unprepared.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a href="#story" class="ttn-btn-primary">
+            <span>Read the Story</span><span>➜</span>
+          </a>
+          <a href="/about-throttle-therapy-nation" class="ttn-pill-outline ttn-pill-outline--pink">
+            About the Movement
+          </a>
+          <a href="/join-the-nation" class="ttn-pill-outline ttn-pill-outline--orange">
+            Join the Nation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORIGIN STORY -->
+    <section id="story" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">The beginning</div>
+        <h2 class="ttn-section-title">It Started With Weight No One Could See.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+      <div class="ttn-body-copy">
+        <p>
+          Before there was a Nation, there was a rider and a family trying to keep moving under the kind of emotional
+          and practical weight most people never see. The machines, the trails, and the mountains became a place to
+          breathe when everything else felt too loud or too heavy — but they also exposed how quickly things could go
+          wrong when people were overwhelmed, under-trained, or just trusted the wrong voices.
+        </p>
+        <p>
+          As rides got bigger, responsibilities grew too: caring for a husband, honoring a marriage, protecting kids
+          and future riders, and carrying commitments to a wider community. There were seasons that should have broken
+          everything. Instead, they became proof that grief, fear, and chaos don’t get the last word when people link
+          arms and decide to build something different.
+        </p>
+      </div>
+    </section>
+
+    <!-- NOT BUILT ALONE -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Never a solo project</div>
+        <h2 class="ttn-section-title">Without My Husband, Family &amp; Community, There Is No TTN.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-card-row">
+        <!-- Husband & Marriage -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Marriage &amp; Partnership</div>
+          <h3 class="ttn-card-heading">This Was Built With Him, Not Around Him.</h3>
+          <p class="ttn-card-body">
+            None of this would exist without the support, sacrifice, and belief of my husband. TTN was never an escape
+            from our life together — it was something we chose to build in the middle of it. Every mile, late-night
+            planning session, and hard conversation shaped this Nation as much as any trail or machine ever could.
+          </p>
+        </article>
+
+        <!-- Family -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Family</div>
+          <h3 class="ttn-card-heading">Family First, Even When the Trail Calls.</h3>
+          <p class="ttn-card-body">
+            The Heart of TTN is about protecting the people we love most while still making space for the parts of us
+            that come alive in the dirt and the dark. Kids, future riders, extended family — they are the “why” behind
+            the standards, the boundaries, and the way we choose to communicate risk and responsibility.
+          </p>
+        </article>
+
+        <!-- Community -->
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Community</div>
+          <h3 class="ttn-card-heading">A Nation Built By the Ones Who Showed Up.</h3>
+          <p class="ttn-card-body">
+            Riders, widows, grandparents, park owners, builders, and leaders all poured pieces of their own stories
+            into this. TTN is not one person’s brand; it’s a shared work shaped by people who knew what it felt like to
+            be overwhelmed and didn’t want the next crew to do it alone.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- KEY TURNING POINTS -->
+    <section class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">Turning points</div>
+        <h2 class="ttn-section-title">Moments That Changed How We Ride, Teach &amp; Lead.</h2>
+        <div class="ttn-underline"></div>
+      </div>
+
+      <div class="ttn-timeline">
+        <div class="ttn-body-copy ttn-timeline-item">
+          <p>
+            There were rides where the variables stacked up faster than anyone could explain — weather, terrain,
+            machines, group dynamics, unspoken expectations. Those nights didn’t just leave stories; they left a deep
+            conviction that we had to name what was really happening if we wanted people to get home safer.
+          </p>
+        </div>
+        <div class="ttn-body-copy ttn-timeline-item">
+          <p>
+            There were seasons where grief and stress followed us to the mountain. The rides weren’t just “fun trips” —
+            they were lifelines. We started to see clearly how many people were using off-road time to cope with things
+            they never felt safe saying out loud.
+          </p>
+        </div>
+        <div class="ttn-body-copy ttn-timeline-item">
+          <p>
+            And there were moments when the community stepped in — with meals, with machines, with late-night talks,
+            with practical help — proving that this world is at its best when nobody is trying to perform, impress, or
+            pretend they have it all together.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT THE HEART PROTECTS -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">The Heart of TTN Protects How We Build Everything Else.</h2>
+      <p class="ttn-band-body">
+        The story behind TTN is why we are stubborn about safety, honest language, mapping clarity, rider education,
+        and the gear we stand behind. We know what it feels like to be carrying too much, trying to make good decisions
+        with bad information, and hoping nothing goes wrong. The Heart of TTN is the filter we run everything through
+        so we don’t turn people’s pain into content or turn their trust into a sales pitch.
+      </p>
+      <div class="ttn-band-links">
+        <a href="/ttn-national-rider-education-center" class="ttn-pill-outline ttn-pill-outline--orange">
+          See How We Teach Riders
+        </a>
+        <a href="/trusted-gear" class="ttn-pill-outline">
+          Why We Choose TTN™ Trusted Gear
+        </a>
+        <a href="/park-rankings-and-directory" class="ttn-pill-outline ttn-pill-outline--pink">
+          How We Honor Parks &amp; Destinations
+        </a>
+      </div>
+    </section>
+
+    <!-- INVITATION / CLOSING -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">If You’re Carrying More Than People See, You’re in the Right Place.</h2>
+      <p class="ttn-band-body">
+        Maybe you’re holding a family together, leading a park, rebuilding a life, or trying to figure out what’s next.
+        Maybe you’ve walked through loss, transition, or seasons that took more than they gave. The Heart of TTN says:
+        you don’t have to hide that here — and you don’t have to figure it out alone.
+      </p>
+      <div class="ttn-band-links">
+        <a href="/join-the-nation" class="ttn-btn-primary">
+          <span>Join the Nation</span><span>➜</span>
+        </a>
+        <a href="mailto:ride.heal.belong@gmail.com" class="ttn-pill-outline">
+          Share Your Story With TTN
+        </a>
+        <a href="/the-nation" class="ttn-pill-outline ttn-pill-outline--pink">
+          Meet Riders of the Nation
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — THE HEART OF TTN PAGE -->

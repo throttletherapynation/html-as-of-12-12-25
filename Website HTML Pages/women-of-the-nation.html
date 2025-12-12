@@ -1,0 +1,856 @@
+<!-- TTN — WOMEN OF THE NATION PAGE – MATCHED TO "THE NATION" LAYOUT -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS (same as THE NATION) */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background: #020309;
+}
+
+.ttn-logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* OPTIONAL WOMEN BADGE (circular TTN text instead of photo) */
+.ttn-women-badge {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.4);
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.4), transparent 60%),
+    radial-gradient(circle at bottom, rgba(0,198,255,0.35), #020308 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 14px rgba(255,0,125,0.5),
+    0 0 18px rgba(0,198,255,0.3);
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.3rem;
+  color: var(--ttn-pink);
+  text-align: center;
+}
+
+/* HERO TEXT (same system as THE NATION) */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 760px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+/* HERO LAYOUT */
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* HERO MEDIA (kept for consistency, not used on this page) */
+.ttn-hero-media {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 0 40px rgba(255, 0, 125, 0.6);
+  min-height: 260px;
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.2), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+/* neon backing glow */
+.ttn-hero-media::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  border-radius: 40px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.8),
+    rgba(0, 198, 255, 0.6),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.ttn-hero-media img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+.ttn-hero-media-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at bottom right, rgba(0,198,255,0.22), transparent 55%);
+}
+
+/* CTAs */
+.ttn-hero-ctas,
+.ttn-cta-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect (GOOD VERSION) */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.5);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.65);
+}
+
+/* Outlined pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADER */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD ROWS */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+  flex: 1;
+}
+
+.ttn-card-body ul {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+
+.ttn-card-body li + li {
+  margin-top: 0.2rem;
+}
+
+/* BANDS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* CHECKLISTS (used in strips/sections) */
+.ttn-checklist {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.7rem;
+  font-size: 0.96rem;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-checklist li {
+  margin-bottom: 0.35rem;
+  padding-left: 1.4rem;
+  position: relative;
+}
+.ttn-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ffd400;
+}
+
+/* CHIP ROWS (for labels like "New Riders", "Moms & Caregivers") */
+.ttn-chip-row {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ttn-chip {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.24);
+  background: rgba(5,8,20,0.9);
+  color: var(--ttn-text-soft);
+}
+
+/* PILLAR CHIPS: Ride / Heal / Belong */
+.ttn-pillars-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.ttn-pillars-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.ttn-pillar-chip {
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(4,10,22,0.95);
+}
+
+.ttn-pillar-chip--ride   { color: var(--ttn-blue);  border-color: rgba(0,198,255,0.75); }
+.ttn-pillar-chip--heal   { color: var(--ttn-pink);  border-color: rgba(255,0,125,0.7); }
+.ttn-pillar-chip--belong { color: var(--ttn-orange);border-color: rgba(255,106,0,0.7); }
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ttn-hero-ctas,
+  .ttn-cta-actions {
+    flex-direction: column;
+  }
+
+  .ttn-btn-primary,
+  .ttn-pill-outline {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO -->
+    <section class="ttn-hero-layout" id="top">
+      <div>
+        <div class="ttn-logo-row">
+          <div class="ttn-women-badge">TTN</div>
+          <div class="ttn-logo-text">
+            Women of the Nation • Throttle Therapy Nation™
+          </div>
+        </div>
+
+        <div class="ttn-kicker">
+          Ride. Heal. Belong.™ • Built With Women in Mind
+        </div>
+
+        <h1 class="ttn-hero-heading">
+          Women of the Nation
+        </h1>
+        <p class="ttn-hero-support">
+          “Fearless. Powerful. Unstoppable.”
+        </p>
+
+        <p class="ttn-hero-sub">
+          Women of the Nation is where riders, moms, daughters, caregivers, leaders and quiet fighters all meet
+          on the same ground. You don’t have to fit a stereotype to belong here — you just have to be willing
+          to show up as <strong>who you really are</strong>, at the pace your story needs.
+        </p>
+
+        <p class="ttn-hero-sub">
+          Whether you’re brand new, coming back after a lot of life, riding for your kids, riding for yourself,
+          or riding so you don’t lose yourself — there’s a lane for you inside TTN™.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <!-- Redirects -->
+          <a
+            href="https://shop.throttletherapynation.com"
+            class="ttn-btn-primary"
+            target="_top"
+          >
+            <span>Women of the Nation Gear</span><span>➜</span>
+          </a>
+
+          <a
+            href="https://www.facebook.com/groups/throttle.therapy.nation/"
+            class="ttn-btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Join the Nation Community</span><span>➜</span>
+          </a>
+
+          <!-- In-page -->
+          <a href="#pillars" class="ttn-pill-outline ttn-pill-outline--pink">
+            How Women Fit Into Ride. Heal. Belong.
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO THIS SPACE IS FOR -->
+    <section class="ttn-section" id="who">
+      <header class="ttn-section-header">
+        <div class="ttn-section-label">who belongs here</div>
+        <h2 class="ttn-section-title">If You Carry a Lot and Still Show Up, You’re One of Us.</h2>
+        <p class="ttn-body-copy">
+          Women of the Nation isn’t just about who holds the steering wheel. It’s for the women who plan the trip,
+          pack the bags, calm the fears, keep the family moving and still find a way to care for everyone else.
+          This space is built so you have somewhere to breathe, ride and remember you’re more than what you carry.
+        </p>
+      </header>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Riders &amp; Co-Pilots</div>
+          <h3 class="ttn-card-heading">Drivers, Passengers &amp; Future Drivers.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Some days you’re gripping the wheel. Some days you’re in the passenger seat, reading the terrain
+              and supporting someone else. Both count.
+            </p>
+            <ul>
+              <li>New riders learning to take the wheel for the first time.</li>
+              <li>Seasoned riders who finally want their own rig and voice.</li>
+              <li>Women who swap between driver, co-pilot and spotter depending on the day.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Moms, Caregivers &amp; Anchors</div>
+          <h3 class="ttn-card-heading">The Ones Everyone Depends On.</h3>
+          <div class="ttn-card-body">
+            <p>
+              You may be the one who packs the snacks, double-checks the straps, watches the kids and
+              quietly makes sure everyone comes home safe.
+            </p>
+            <ul>
+              <li>Women balancing medical, emotional or family realities with the desire to ride.</li>
+              <li>Moms building “future riders” step by step, one safe experience at a time.</li>
+              <li>Caregivers who need a space where someone else finally looks out for them.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Survivors &amp; Rebuilders</div>
+          <h3 class="ttn-card-heading">You’re Not “Too Much” for This Community.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Many of our women arrived here with heavy stories — health scares, grief, trauma, burnout,
+              or seasons where life hit harder than expected.
+            </p>
+            <ul>
+              <li>You’re allowed to be new, cautious, emotional or tired.</li>
+              <li>You don’t owe anyone your full story to be welcome here.</li>
+              <li>“Showing up” can mean trying on a helmet, riding one easy trail or just being there.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="ttn-chip-row">
+        <span class="ttn-chip">New Riders</span>
+        <span class="ttn-chip">Returning After a Lot of Life</span>
+        <span class="ttn-chip">Moms &amp; Caregivers</span>
+        <span class="ttn-chip">Quiet Leaders</span>
+      </div>
+    </section>
+
+    <!-- RIDE. HEAL. BELONG. FOR WOMEN -->
+    <section class="ttn-section" id="pillars">
+      <header class="ttn-section-header">
+        <div class="ttn-section-label">our core pillars</div>
+        <h2 class="ttn-section-title">Ride. Heal. Belong.™ — Through a Woman’s Lens.</h2>
+        <p class="ttn-body-copy">
+          The TTN™ core pillars don’t change, but the way women experience them often does. This is how
+          <strong>Ride. Heal. Belong.™</strong> shows up in the lives, bodies and schedules of women who carry a lot.
+        </p>
+      </header>
+
+      <div class="ttn-pillars-tag">for women of the nation</div>
+      <div class="ttn-pillars-row">
+        <span class="ttn-pillar-chip ttn-pillar-chip--ride">Ride</span>
+        <span class="ttn-pillar-chip ttn-pillar-chip--heal">Heal</span>
+        <span class="ttn-pillar-chip ttn-pillar-chip--belong">Belong</span>
+      </div>
+
+      <div class="ttn-card-row" style="margin-top:1.2rem;">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Ride</div>
+          <h3 class="ttn-card-heading">A Place to Feel Strong Again.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Riding gives women a space to feel capable, powerful and present — even when the rest of life
+              is loud, demanding or uncertain.
+            </p>
+            <ul>
+              <li>Choosing trails and trips that match your real time, energy and health.</li>
+              <li>Learning skills at a pace that respects fear, fatigue and recovery.</li>
+              <li>Riding as yourself, not as the “perfect version” people expect.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Heal</div>
+          <h3 class="ttn-card-heading">Movement That Meets You Where You Are.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Healing doesn’t always look like “before and after” photos. Sometimes it looks like
+              breathing deeper, laughing once in the middle of a hard week or realizing you’re still here.
+            </p>
+            <ul>
+              <li>Using trails and seat time as a release valve, not an escape from responsibility.</li>
+              <li>Honoring pain, fatigue or medical realities instead of hiding them.</li>
+              <li>Letting the trail be a place where your nervous system can exhale.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Belong</div>
+          <h3 class="ttn-card-heading">You Don’t Have to Earn Your Spot.</h3>
+          <div class="ttn-card-body">
+            <p>
+              TTN™ is built so women don’t have to prove they’re “tough enough” to fit. You belong here
+              because you are human, not because your rig looks a certain way.
+            </p>
+            <ul>
+              <li>Riding in groups where “slow down” and “not today” are respected.</li>
+              <li>Finding other women who understand balancing real life with seat time.</li>
+              <li>Being part of a Nation that values who you are, not just what you can endure.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW TTN DESIGNS FOR WOMEN -->
+    <section class="ttn-section" id="design">
+      <header class="ttn-section-header">
+        <div class="ttn-section-label">how we build experiences</div>
+        <h2 class="ttn-section-title">Built So You Don’t Have to Shrink to Fit In.</h2>
+        <p class="ttn-body-copy">
+          A lot of spaces ask women to “just keep up” — in silence. TTN™ is intentionally designed so women can
+          ask questions, adjust the plan and still feel like full members of the crew.
+        </p>
+      </header>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">On the Trail</div>
+          <h3 class="ttn-card-heading">Ride Plans That Respect Real Life.</h3>
+          <div class="ttn-card-body">
+            <p>
+              TTN™ ride culture is built around planning, communication and realistic expectations — especially
+              when women, kids and mixed-skill groups are involved.
+            </p>
+            <ul>
+              <li>Pre-ride conversations about pace, terrain, time windows and non-negotiables.</li>
+              <li>Breaks designed around bodies that actually get tired, not just machines that need fuel.</li>
+              <li>Clear roles for leads, co-leads and sweeps so no one is left behind or pressured past their limit.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">In the Community</div>
+          <h3 class="ttn-card-heading">Spaces Where Your Voice Matters.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Whether you’re online or in person, Women of the Nation is built to make room for women’s questions,
+              insights and boundaries.
+            </p>
+            <ul>
+              <li>Encouraging women to lead, navigate, spot and teach — not just “come along.”</li>
+              <li>Respecting privacy: you share what you want, when you’re ready.</li>
+              <li>Celebrating wins that don’t look like highlight reels — like loading up and showing up.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="ttn-band ttn-glow" style="margin-top:1.7rem;">
+        <h2 class="ttn-band-heading">You Don’t Have to Do This Alone.</h2>
+        <p class="ttn-band-body">
+          If you’re a woman who wants to ride but feels overwhelmed, intimidated or just plain tired, you
+          are exactly who this community was built for. Start with one small step:
+        </p>
+        <ul class="ttn-checklist">
+          <li>Visit <a href="https://shop.throttletherapynation.com/collections/new-rider-essentials" target="_top">New Rider Essentials</a> for a gentle starting point.</li>
+          <li>Join the Nation community and simply watch, read and breathe before you ever post.</li>
+          <li>Talk with your people about a realistic first or next ride, not a perfect one.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GEAR & EXPRESSING WHO YOU ARE -->
+    <section class="ttn-section" id="gear">
+      <header class="ttn-section-header">
+        <div class="ttn-section-label">gear &amp; identity</div>
+        <h2 class="ttn-section-title">Wear What Feels Like You, Not What’s Expected.</h2>
+        <p class="ttn-body-copy">
+          Women of the Nation gear is built so you don’t have to pick between “cute but not functional”
+          and “functional but not made with you in mind.” You deserve pieces that respect both your story
+          and your safety.
+        </p>
+      </header>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Comfort &amp; Fit</div>
+          <h3 class="ttn-card-heading">Your Body, Your Pace.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Different seasons of life mean different needs — curves, scars, medical devices, strength
+              changes and everything in between.
+            </p>
+            <ul>
+              <li>Prioritizing pieces that move with you, not against you.</li>
+              <li>Layers that work in real weather, not just in photos.</li>
+              <li>Options that respect modesty, comfort and personal style.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Expression</div>
+          <h3 class="ttn-card-heading">You’re Allowed to Take Up Space.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Some days you want loud and neon. Some days you want neutral and quiet. Both are valid.
+            </p>
+            <ul>
+              <li>Designs that honor strength, softness and everything in between.</li>
+              <li>Graphics that speak to real life, not just highlight reels.</li>
+              <li>Pieces you can wear on and off the trail without feeling like two different people.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Support</div>
+          <h3 class="ttn-card-heading">You’re Not Just “Merch.” You’re the Movement.</h3>
+          <div class="ttn-card-body">
+            <p>
+              When you support TTN™, you’re fueling education, mapping, safe rides and spaces built for
+              riders who might have otherwise stayed home.
+            </p>
+            <ul>
+              <li>A portion of what we build moves back into riders, parks and programs.</li>
+              <li>Your voice helps shape future collections and resources.</li>
+              <li>You become part of a Nation that rides with you, not just in front of you.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:1.2rem;">
+        <a
+          href="https://shop.throttletherapynation.com"
+          class="ttn-btn-primary"
+          target="_top"
+        >
+          <span>Explore Women of the Nation Gear</span><span>➜</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">You Don’t Have to Be “Fearless” to Belong Here.</h2>
+      <p class="ttn-band-body">
+        The truth is, most of the women who ride with TTN™ aren’t fearless. They’re <strong>brave while still
+        feeling everything</strong> — stress, grief, responsibility, anxiety and hope. Women of the Nation was
+        built so you have a place to ride, process and rebuild without having to pretend.
+      </p>
+      <p class="ttn-band-body" style="margin-top:0.7rem;">
+        If all you can do today is click a link, read a page or send one message — that counts. When you’re ready
+        to take the next step, we’ll be right here, making sure you have a place to
+        <strong>Ride. Heal. Belong.™</strong> as the woman you actually are.
+      </p>
+
+      <div class="ttn-band-links">
+        <a
+          href="https://www.facebook.com/groups/throttle.therapy.nation/"
+          class="ttn-btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Join the Nation Community</span><span>➜</span>
+        </a>
+        <a
+          href="https://shop.throttletherapynation.com/collections/new-rider-essentials"
+          class="ttn-pill-outline ttn-pill-outline--orange"
+          target="_top"
+        >
+          <span>Visit New Rider Essentials</span>
+        </a>
+        <a href="mailto:ride.heal.belong@gmail.com" class="ttn-pill-outline">
+          Email TTN™: ride.heal.belong@gmail.com
+        </a>
+        <a href="#top" class="ttn-pill-outline ttn-pill-outline--pink">
+          Back to Top
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — WOMEN OF THE NATION PAGE -->

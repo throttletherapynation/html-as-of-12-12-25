@@ -1,0 +1,1915 @@
+<!-- TTN — PARK RANKINGS & DIRECTORY + 2025 RANKINGS + NATIONWIDE DIRECTORY (UNIFIED PAGE) -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS */
+.ttn-theme {
+  --ttn-bg-page: #050914;
+  --ttn-bg-card-top: #071120;
+  --ttn-bg-card-bottom: #020b16;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+  --ttn-gold: #ffd400;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #c1c9e7;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background:
+    radial-gradient(circle at top, #0a1628 0, var(--ttn-bg-page) 55%, #02060d 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ttn-theme a {
+  color: var(--ttn-blue);
+  text-decoration: none;
+}
+.ttn-theme a:hover {
+  color: var(--ttn-pink);
+}
+
+/* LOGO ROW (TEXT-ONLY HERE) */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 780px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 150px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+.ttn-hero-layout {
+  margin-bottom: 3rem;
+}
+
+/* CTAs */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.55);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.7);
+}
+
+/* Outline pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(7,13,24,0.9);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(9,18,36,1);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTIONS */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+.ttn-section-sub {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+  margin-top: 0.4rem;
+}
+
+/* BODY COPY */
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* GENERIC CARD GRID */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Generic card */
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+}
+
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.05rem;
+  color: var(--ttn-pink);
+  margin: 0;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-card-body ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+}
+.ttn-card-body li + li {
+  margin-top: 0.2rem;
+}
+
+/* SIMPLE LISTS */
+.ttn-list {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+.ttn-list li + li {
+  margin-top: 0.2rem;
+}
+
+/* CHECKLIST */
+.ttn-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+
+.ttn-checklist li {
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ttn-orange);
+  font-size: 0.95rem;
+}
+
+/* CHIP ROW */
+.ttn-chip-row {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ttn-chip {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.32rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.24);
+  background: rgba(5,8,20,0.9);
+  color: var(--ttn-text-soft);
+}
+
+/* RANKING GRID */
+.ttn-ranking-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .ttn-ranking-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.ttn-ranking-card {
+  background:
+    radial-gradient(circle at top left, rgba(255,0,125,0.16), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(0,198,255,0.18), transparent 60%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.9);
+  padding: 1.4rem 1.4rem 1.5rem;
+}
+
+.ttn-ranking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.ttn-ranking-pos {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ttn-text-muted);
+}
+
+.ttn-ranking-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ttn-ranking-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ttn-orange);
+  white-space: nowrap;
+}
+
+.ttn-ranking-details {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-ranking-details div {
+  margin-bottom: 0.15rem;
+}
+
+.ttn-ranking-take {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.26);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ttn-text);
+  margin-top: 0.6rem;
+}
+
+.ttn-badge-pill span {
+  color: var(--ttn-gold);
+}
+
+/* CTA BANDS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(255,0,125,0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Bright band for partner CTA */
+.ttn-band--bright {
+  background:
+    radial-gradient(circle at top left, rgba(0,198,255,0.22), transparent 55%),
+    linear-gradient(180deg, rgba(20,32,54,0.96), rgba(10,16,30,0.98));
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.75);
+}
+
+.ttn-band--bright .ttn-band-heading {
+  color: var(--ttn-pink);
+  text-shadow: 0 0 12px rgba(255,0,125,0.55);
+}
+
+.ttn-band--bright .ttn-band-body {
+  color: #d8e0f2;
+}
+
+/* ========== NATIONWIDE DIRECTORY STYLES ========== */
+
+.ttn-dir-intro {
+  margin-top: 3rem;
+}
+
+.ttn-dir-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ttn-blue);
+  margin-bottom: 0.5rem;
+}
+
+.ttn-dir-sub {
+  font-size: 0.94rem;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* Region nav pills row */
+.ttn-dir-nav-wrap {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.ttn-dir-nav-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.ttn-dir-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ttn-dir-nav::-webkit-scrollbar {
+  height: 4px;
+}
+.ttn-dir-nav::-webkit-scrollbar-thumb {
+  background: rgba(75,85,99,0.8);
+  border-radius: 999px;
+}
+
+.ttn-dir-pill {
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(148,163,184,0.55);
+  background: radial-gradient(circle at top, rgba(0,198,255,0.16), rgba(5,8,20,0.96));
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #e5e7eb;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.ttn-dir-pill:hover {
+  border-color: var(--ttn-pink);
+}
+
+/* Region wrapper */
+.ttn-dir-region {
+  margin-bottom: 2.4rem;
+  padding: 1.4rem 1.1rem;
+  border-radius: 1.1rem;
+  background:
+    radial-gradient(circle at top left, rgba(0,198,255,0.18), rgba(5,8,20,0.96));
+  border: 1px solid rgba(55,65,81,0.9);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.7);
+}
+
+.ttn-dir-region-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px dashed rgba(148,163,184,0.6);
+  padding-bottom: 0.8rem;
+}
+
+.ttn-dir-region-title h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+  color: var(--ttn-text);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.ttn-dir-region-title h3 span {
+  color: var(--ttn-pink);
+}
+
+.ttn-dir-region-sub {
+  font-size: 0.84rem;
+  color: #d1d5db;
+}
+
+.ttn-dir-region-sub span.states {
+  color: var(--ttn-blue);
+  font-weight: 600;
+}
+
+.ttn-dir-region-badge {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.75);
+  color: var(--ttn-text);
+  background: linear-gradient(135deg, rgba(8,47,73,0.9), rgba(236,72,153,0.2));
+}
+
+/* States within a region */
+.ttn-dir-state-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.ttn-dir-state-card {
+  background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(17,24,39,0.98));
+  border-radius: 0.9rem;
+  border: 1px solid rgba(55,65,81,0.9);
+  padding: 0.9rem 0.95rem 0.85rem;
+}
+
+.ttn-dir-state-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.5rem;
+  color: var(--ttn-text);
+}
+
+.ttn-dir-park-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+.ttn-dir-park-list li {
+  margin-bottom: 0.28rem;
+  position: relative;
+  padding-left: 0.9rem;
+}
+
+.ttn-dir-park-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ttn-blue);
+}
+
+/* Legal note at bottom */
+.ttn-dir-legal-note {
+  margin-top: 2rem;
+  font-size: 0.78rem;
+  color: var(--ttn-text-muted);
+  border-top: 1px dashed rgba(75,85,99,0.9);
+  padding-top: 1.1rem;
+}
+
+/* UNIVERSAL GLOW */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-theme {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .ttn-hero-ctas {
+    flex-direction: column;
+  }
+
+  .ttn-btn-primary,
+  .ttn-pill-outline {
+    width: 100%;
+  }
+
+  .ttn-ranking-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .ttn-dir-region-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .ttn-dir-region {
+    padding: 1.7rem 1.3rem;
+    border-radius: 1.3rem;
+  }
+
+  .ttn-dir-state-grid {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO -->
+    <section class="ttn-hero-layout">
+      <div class="ttn-logo-row">
+        <div class="ttn-logo-text">
+          TTN™ Parks Rankings &amp; Directory
+        </div>
+      </div>
+
+      <div>
+        <div class="ttn-kicker">The Initiative • Maps, Ratings &amp; Trail Clarity</div>
+
+        <h1 class="ttn-hero-heading">
+          Know Where You’re Going Before You Ever Unload.
+        </h1>
+        <p class="ttn-hero-support">
+          Park clarity • Real-world ratings • Built with riders &amp; parks
+        </p>
+
+        <p class="ttn-hero-sub">
+          The TTN™ Parks Rankings &amp; Directory was shaped by riders, families, park owners and trail teams who were
+          done with <strong>guessing what they were getting into</strong>. This is where we bring together
+          <strong>plain-language park profiles, clarity-focused ratings and real-world notes</strong> so you can pick
+          a destination that matches your actual season — not just the highlight reel.
+        </p>
+        <p class="ttn-hero-sub">
+          Below you’ll find how the system works, the full <strong>2025 TTN™ Park Rankings</strong>,
+          and a growing <strong>nationwide directory</strong> of legal, rider-approved parks to plan future seasons.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a href="#how-rankings-work" class="ttn-btn-primary">
+            <span>How the Rankings Work</span><span>➜</span>
+          </a>
+          <a href="#rankings-2025" class="ttn-pill-outline ttn-pill-outline--pink">
+            2025 Parks &amp; Rankings
+          </a>
+          <a href="#directory" class="ttn-pill-outline ttn-pill-outline--orange">
+            Nationwide Directory
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW RANKINGS WORK (CONCEPT + CRITERIA) -->
+    <section id="how-rankings-work" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">how this was built</div>
+        <h2 class="ttn-section-title">More Than Stars. A System Built Around Real People.</h2>
+        <p class="ttn-section-sub">
+          TTN™ rankings aren’t about “best park on the internet.” They’re designed to answer three real questions:
+          <strong>Is this a good fit for our season?</strong> <strong>Do we understand the risks?</strong>
+          <strong>Can we move through it on purpose instead of guessing?</strong>
+        </p>
+      </div>
+
+      <div class="ttn-body-copy">
+        <p>
+          Each park is scored using the same core criteria so riders can compare apples to apples, not hype to hype.
+          We looked at <strong>access, terrain, family range, breakage factor, nearby support and overall ride reality</strong>,
+          not just highlight reels.
+        </p>
+        <p>
+          For the 2025 rankings, we tracked:
+        </p>
+        <ul style="margin-left:1.1rem; padding-left:0; font-size:0.95rem;">
+          <li>Park access cost and value (day vs yearly, per machine vs per person).</li>
+          <li>Trail mix and clarity: easy, moderate and hard routes, and how clearly they’re marked and connected.</li>
+          <li>Family-friendly factors: kids, future riders and mixed-skill group comfort.</li>
+          <li>Terrain plan: whether the park fits a day trip, a weekend or a full week.</li>
+          <li>Nearby supplies: fuel, food, parts and town resources within realistic reach.</li>
+          <li>Breakage factor &amp; parts: how hard the terrain is on machines and how quickly you can get back rolling.</li>
+          <li>Camping &amp; lodging: RV/primitive options, nearby Airbnb and overall cost balance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PARK LANES -->
+    <section id="park-lanes" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">park lanes</div>
+        <h2 class="ttn-section-title">Different Parks. Different Purposes. Clearer Expectations.</h2>
+        <p class="ttn-section-sub">
+          Not every park is built for the same kind of rider or season of life. Instead of pretending they are,
+          we use <strong>lanes</strong> to help you match your crew to the right kind of terrain and energy.
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">lane 1</div>
+          <h3 class="ttn-card-heading">Confidence Builder Parks.</h3>
+          <p class="ttn-card-body">
+            Parks where new riders, families and “coming back after a hard season” riders can build skills on purpose.
+          </p>
+          <ul class="ttn-list">
+            <li>Beginner-friendly routes and clearer navigation.</li>
+            <li>Options for half-day and realistic ride windows.</li>
+            <li>Good fits for TTN™ Guided Rides and family-first days.</li>
+          </ul>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">lane 2</div>
+          <h3 class="ttn-card-heading">Progression &amp; Mixed-Skill Terrain.</h3>
+          <p class="ttn-card-body">
+            Parks where you can grow — with a mix of easier loops and more technical options once the crew is ready.
+          </p>
+          <ul class="ttn-list">
+            <li>Multiple route options from a single basecamp.</li>
+            <li>Places to split the group without losing each other.</li>
+            <li>Ideal for “some ready to push, some rebuilding” groups.</li>
+          </ul>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">lane 3</div>
+          <h3 class="ttn-card-heading">Advanced, Technical &amp; High-Commitment.</h3>
+          <p class="ttn-card-body">
+            Parks and zones that ask more of machines, bodies and brains. Not about ego — about honesty.
+          </p>
+          <ul class="ttn-list">
+            <li>Steeper, tighter, more technical terrain profiles.</li>
+            <li>Higher potential for vehicle damage or recovery needs.</li>
+            <li>Better suited for experienced drivers with clear group structure.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="ttn-chip-row">
+        <span class="ttn-chip">Confidence Builder</span>
+        <span class="ttn-chip">Family &amp; Future Riders</span>
+        <span class="ttn-chip">Progression Terrain</span>
+        <span class="ttn-chip">Advanced / Technical</span>
+      </div>
+    </section>
+
+    <!-- WHAT'S IN EACH PARK PROFILE -->
+    <section class="ttn-section" id="what-you-get">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">inside the directory</div>
+        <h2 class="ttn-section-title">What You Can Expect to Find for Each Park.</h2>
+        <p class="ttn-section-sub">
+          As the TTN™ Parks Rankings &amp; Directory grows, each participating park will have a profile designed to
+          answer the questions riders and families actually ask when they’re loading the trailer.
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card">
+          <div class="ttn-card-kicker">park snapshot</div>
+          <h3 class="ttn-card-heading">At-a-Glance Reality Check.</h3>
+          <p class="ttn-card-body">
+            High-level details to help you quickly decide whether this park fits your current season.
+          </p>
+          <ul class="ttn-list">
+            <li>Location, general terrain type and “feel” of the park.</li>
+            <li>Recommended rider experience range.</li>
+            <li>Notes for families, future riders and non-riding spouses.</li>
+          </ul>
+        </article>
+
+        <article class="ttn-card">
+          <div class="ttn-card-kicker">risk &amp; clarity</div>
+          <h3 class="ttn-card-heading">How Honest Do We Need to Be With Ourselves?</h3>
+          <p class="ttn-card-body">
+            Risk isn’t the enemy — <em>surprise</em> is. TTN™ profiles call out factors you need to weigh before you go.
+          </p>
+          <ul class="ttn-list">
+            <li>Navigation clarity and “can we get turned around?” risk.</li>
+            <li>Weather and season notes that actually matter.</li>
+            <li>Known high-risk zones or “not with kids today” areas.</li>
+          </ul>
+        </article>
+
+        <article class="ttn-card">
+          <div class="ttn-card-kicker">support &amp; services</div>
+          <h3 class="ttn-card-heading">Who’s Around When Things Go Sideways?</h3>
+          <p class="ttn-card-body">
+            A park’s support structure matters, especially for newer riders and families.
+          </p>
+          <ul class="ttn-list">
+            <li>On-site staff, rescue or recovery expectations (where applicable).</li>
+            <li>Nearby fuel, lodging and “reset” options.</li>
+            <li>How to respect locals, landowners and community norms.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOR PARK OWNERS & TEAMS -->
+    <section id="for-parks" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">for parks &amp; destinations</div>
+        <h2 class="ttn-section-title">If You Carry the Weight of the Gate, This Is for You.</h2>
+        <p class="ttn-section-sub">
+          TTN™ wasn’t built to judge parks from a distance. It was built with parks who are tired of doing everything
+          alone — communication, expectations, rider education and fallout when things go sideways.
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">park partners</div>
+          <h3 class="ttn-card-heading">Become Part of the TTN™ Initiative.</h3>
+          <p class="ttn-card-body">
+            If you’re a park owner, trail lead or destination team who cares about clarity and long-game sustainability,
+            there’s a lane for you inside this work.
+          </p>
+          <ul class="ttn-list">
+            <li>Collaborative park profiles and clarity-focused messaging.</li>
+            <li>Alignment with TTN™ education and expectations at the gate.</li>
+            <li>Opportunities to host TTN™ Guided Rides and training days.</li>
+          </ul>
+          <a href="/educator-and-park-application" class="ttn-pill-outline ttn-pill-outline--pink" style="margin-top:1.1rem;">
+            Start Park / Educator Conversation
+          </a>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">gold standard path</div>
+          <h3 class="ttn-card-heading">Toward Gold Standard Trail System™ Status.</h3>
+          <p class="ttn-card-body">
+            Over time, parks who align with TTN™ standards for clarity, safety, education and mapping may be recognized
+            as part of the <strong>Gold Standard Trail System™</strong> and related initiatives.
+          </p>
+          <ul class="ttn-list">
+            <li>Shared language around expectations and rider roles.</li>
+            <li>Improved communication tools for risk and route clarity.</li>
+            <li>Long-term collaboration instead of one-off marketing pushes.</li>
+          </ul>
+          <a href="mailto:bentleygoalsoffroad@throttletherapynation.com?subject=TTN%20Park%20Initiative%20Conversation" class="ttn-pill-outline" style="margin-top:1.1rem;">
+            Email TTN™ About Park Alignment
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2025 SEASON INTRO + RANKINGS -->
+    <section id="rankings-2025" class="ttn-section">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">2025 season snapshot</div>
+        <h2 class="ttn-section-title">2025 Parks &amp; Rankings.</h2>
+        <p class="ttn-section-sub">
+          Riders in the Nation spent the 2025 season grinding seat time, logging hours, testing rigs and sampling
+          terrain across Kentucky, Tennessee and West Virginia. This isn’t “we went once” data — this is how parks
+          actually ride in real life.
+        </p>
+        <p class="ttn-section-sub">
+          Below is the full 2025 ranking set. Use it as a roadmap to match parks to your crew, your skills and your season —
+          then layer on the nationwide directory to plan what’s next.
+        </p>
+      </div>
+
+      <div class="ttn-ranking-grid">
+
+        <!-- #1 WILDCAT -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#1 • TTN™ 2025 Park of the Year</div>
+              <div class="ttn-ranking-name">
+                Wildcat Offroad Park — East Bernstadt, KY
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Gold Standard Flagship Park</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> East Bernstadt, KY – Privately owned</div>
+            <div><strong>Access Cost:</strong> Daily and yearly pass options per person</div>
+            <div><strong>Trails:</strong> Mostly easy and moderate, with access to challenging lines</div>
+            <div><strong>Family Friendly:</strong> 10 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV and primitive camping; Airbnb options nearby; cost is fair</div>
+            <div><strong>Breakage &amp; Parts:</strong> Moderate breakage factor; nearby shops and parts available</div>
+            <div><strong>Plan For:</strong> A full weekend at minimum</div>
+            <div><strong>Nearby Supplies:</strong> Excellent; London and Corbin offer full fuel, food and basics</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Wildcat does something rare: it works for almost every rider without watering down the ride. New riders,
+            families, mixed-skill crews and veteran drivers can all build a full weekend here and still want more.
+          </p>
+          <p class="ttn-ranking-take">
+            The campground and atmosphere are part of the experience, not an afterthought. For new riders,
+            mixed-skill groups, families and veteran drivers who want a dependable, full-experience weekend, Wildcat
+            Offroad Park is our top recommendation for 2025.
+          </p>
+          <p class="ttn-ranking-take">
+            <a href="https://wildcatoffroadpark.com" target="_blank" rel="noopener">Visit Wildcat Offroad Park ➜</a>
+          </p>
+          <div class="ttn-badge-pill"><span>●</span> TTN™ 2025 Park of the Year</div>
+        </article>
+
+        <!-- #2 BLACK MOUNTAIN -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#2</div>
+              <div class="ttn-ranking-name">
+                <a href="https://www.blackmountainoffroad.com" target="_blank" rel="noopener">
+                  Black Mountain Off-Road (Harlan)
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Rugged • Technical</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Harlan, KY – County owned</div>
+            <div><strong>Access Cost:</strong> Per vehicle, yearly</div>
+            <div><strong>Trails:</strong> Mostly moderate and hard with some difficult</div>
+            <div><strong>Family Friendly:</strong> 3 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV &amp; primitive; Airbnb nearby; cost is fair</div>
+            <div><strong>Breakage &amp; Parts:</strong> High breakage risk; limited local parts</div>
+            <div><strong>Plan For:</strong> A weekend</div>
+            <div><strong>Nearby Supplies:</strong> Moderate; gas and basic food in Harlan</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Big, steep and unforgiving, Black Mountain is the pick for seasoned drivers with built rigs who want real
+            work and real consequence. Not ideal for new riders or young families, but unforgettable for those chasing
+            climbs, commitment and serious terrain.
+          </p>
+        </article>
+
+        <!-- #3 HILLBILLY TRAILS -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#3</div>
+              <div class="ttn-ranking-name">
+                <a href="https://www.hillbillytrails.com" target="_blank" rel="noopener">
+                  Hillbilly Trails
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Laid-Back • Family Strong</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Pikeville, KY – County owned</div>
+            <div><strong>Access Cost:</strong> Per person, yearly</div>
+            <div><strong>Trails:</strong> Mostly easy and moderate</div>
+            <div><strong>Family Friendly:</strong> 10 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV &amp; primitive; Airbnb nearby; cost is fair</div>
+            <div><strong>Breakage &amp; Parts:</strong> Low breakage risk; limited local parts</div>
+            <div><strong>Plan For:</strong> A weekend</div>
+            <div><strong>Nearby Supplies:</strong> Excellent; Pikeville has full gas, food and supplies</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Scenic, relaxed and easy to stage out of, Hillbilly Trails is perfect for families and mixed-skill groups.
+            Town access is simple, terrain variety is solid and it’s one of the strongest “everyone can go” parks in
+            this 2025 lineup.
+          </p>
+        </article>
+
+        <!-- #4 HOLLERWOOD -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#4</div>
+              <div class="ttn-ranking-name">
+                <a href="https://hollerwoodpark.com" target="_blank" rel="noopener">
+                  Hollerwood Off-Road Park
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Moderate Mix</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Stanton, KY – County owned</div>
+            <div><strong>Access Cost:</strong> Per person, yearly (from purchase date)</div>
+            <div><strong>Trails:</strong> Mostly moderate with some easy and a few hard</div>
+            <div><strong>Family Friendly:</strong> 7 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV &amp; primitive; Airbnb nearby; cost is fair</div>
+            <div><strong>Breakage &amp; Parts:</strong> Low breakage risk; limited local parts</div>
+            <div><strong>Plan For:</strong> A day trip</div>
+            <div><strong>Nearby Supplies:</strong> Limited; small-town resources only</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Hollerwood brings a scenic, comfortable mix of trails that let you push a bit without feeling on the edge
+            all day. Great for riders leveling up from easy parks or families ready for something more than just “flat
+            and simple.”
+          </p>
+        </article>
+
+        <!-- #5 TACKETT CREEK -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#5</div>
+              <div class="ttn-ranking-name">
+                <a href="https://www.riderplanet-usa.com/atv/trails/info/tennessee_13658/ride_666d.htm"
+                   target="_blank" rel="noopener">
+                  TWRA (Tackett Creek)
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Remote • Technical</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Log Mountain, TN – State owned</div>
+            <div><strong>Access Cost:</strong> Per vehicle, yearly (from purchase date)</div>
+            <div><strong>Trails:</strong> Mostly moderate and hard</div>
+            <div><strong>Family Friendly:</strong> 3 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV &amp; primitive; Airbnb nearby; cost is fair</div>
+            <div><strong>Breakage &amp; Parts:</strong> Moderate breakage risk; limited local parts</div>
+            <div><strong>Plan For:</strong> A long weekend</div>
+            <div><strong>Nearby Supplies:</strong> Limited; small-town resources only</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Tackett Creek is remote, steep and demanding. It’s built for riders who want effort, commitment and rugged
+            lines — not casual cruising. You’ll want experience, a solid crew and spare parts. Not suited for beginners
+            or young families, but a memorable playground for skilled drivers.
+          </p>
+        </article>
+
+        <!-- #6 HATFIELD & MCCOY -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#6</div>
+              <div class="ttn-ranking-name">
+                <a href="https://trailsheaven.com" target="_blank" rel="noopener">
+                  Hatfield &amp; McCoy (Pinnacle, Indian Ridge &amp; Pocahontas)
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Iconic • Mileage</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Northfork, WV – State owned</div>
+            <div><strong>Access Cost:</strong> Per person, calendar year</div>
+            <div><strong>Trails:</strong> Mostly easy and moderate</div>
+            <div><strong>Family Friendly:</strong> 10 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV &amp; primitive; Airbnb nearby; cost is fair</div>
+            <div><strong>Breakage &amp; Parts:</strong> Low breakage risk; limited local parts</div>
+            <div><strong>Plan For:</strong> A full week</div>
+            <div><strong>Nearby Supplies:</strong> Limited; small-town resources only</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Legendary for a reason, these Hatfield &amp; McCoy systems deliver miles of linked trails, big views and a
+            “ride all week” feel. It’s a prime choice for bucket-list trips where you want variety, range and that
+            iconic East Coast trail experience.
+          </p>
+        </article>
+
+        <!-- #7 ROYAL BLUE / SUNDQUIST -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#7</div>
+              <div class="ttn-ranking-name">
+                <a href="https://www.rideroyalblue.com" target="_blank" rel="noopener">
+                  TWRA (Royal Blue – Sundquist Unit)
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Views • Weekend Flow</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Pioneer, TN – State owned</div>
+            <div><strong>Access Cost:</strong> Per vehicle, yearly (from purchase date)</div>
+            <div><strong>Trails:</strong> Mostly easy and moderate</div>
+            <div><strong>Family Friendly:</strong> 10 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV &amp; primitive; Airbnb nearby; cost is fair</div>
+            <div><strong>Breakage &amp; Parts:</strong> Low breakage risk; limited local parts</div>
+            <div><strong>Plan For:</strong> A long weekend</div>
+            <div><strong>Nearby Supplies:</strong> Limited; small-town resources only</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Royal Blue – Sundquist serves up big views, ridge lines and relaxed miles. Trails are approachable for most
+            riders, making it an easy “let’s get away for a few days” destination where you can stack seat time without
+            beating everybody up.
+          </p>
+        </article>
+
+        <!-- #8 MINE MADE -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#8</div>
+              <div class="ttn-ranking-name">
+                <a href="https://www.minemadepark.com" target="_blank" rel="noopener">
+                  Mine Made Adventure Park
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Beginner • Confidence Builder</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Vest, KY – County owned</div>
+            <div><strong>Access Cost:</strong> Daily ride fee; free access when lodging on-site</div>
+            <div><strong>Trails:</strong> Mostly easy</div>
+            <div><strong>Family Friendly:</strong> 10 / 10</div>
+            <div><strong>Camping / Lodging:</strong> RV sites, primitive camping &amp; nearby Airbnb</div>
+            <div><strong>Breakage &amp; Parts:</strong> Low breakage risk; limited local resources</div>
+            <div><strong>Plan For:</strong> A weekend</div>
+            <div><strong>Nearby Supplies:</strong> Small-town stores; basic fuel and food</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Mine Made is a standout confidence park — excellent for teaching new riders and giving families a calm,
+            low-stress place to learn. Once you’re ready for more technical terrain or faster pace, you’ll naturally
+            graduate up the list.
+          </p>
+        </article>
+
+        <!-- #9 LEATHERWOOD -->
+        <article class="ttn-ranking-card ttn-glow">
+          <div class="ttn-ranking-header">
+            <div>
+              <div class="ttn-ranking-pos">#9</div>
+              <div class="ttn-ranking-name">
+                <a href="https://leatherwoodoffroad.com" target="_blank" rel="noopener">
+                  Leatherwood Off-Road ATV
+                </a>
+              </div>
+            </div>
+            <div class="ttn-ranking-label">Calm • Cruise</div>
+          </div>
+          <div class="ttn-ranking-details">
+            <div><strong>Location:</strong> Leatherwood, KY – Private</div>
+            <div><strong>Access Cost:</strong> Higher per-person fee</div>
+            <div><strong>Trails:</strong> Mostly easy</div>
+            <div><strong>Family Friendly:</strong> 8 / 10</div>
+            <div><strong>Camping / Lodging:</strong> Primitive camping on-site; nearby Airbnb</div>
+            <div><strong>Breakage &amp; Parts:</strong> Limited parts availability</div>
+            <div><strong>Plan For:</strong> A day trip</div>
+            <div><strong>Nearby Supplies:</strong> Small-town fuel and food options</div>
+          </div>
+          <p class="ttn-ranking-take">
+            Leatherwood offers an easy-going, low-pressure ride day with gentle terrain and a slower tempo. It’s a nice
+            fit for casual riders and families wanting something mellow; riders searching for tough climbs or technical
+            lines will eventually want to work further up the rankings.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CTA TO DIRECTORY -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">Plan Your 2025 Ride Season With Intention.</h2>
+      <p class="ttn-band-body">
+        Use these rankings as a roadmap — not a hard rule. Match parks to your crew, your skills and your season.
+        Then pair the 2025 stack with the nationwide directory below to find new destinations that fit your style,
+        your rig and your timeline.
+      </p>
+      <div class="ttn-band-links">
+        <a href="#directory" class="ttn-btn-primary">
+          <span>Open Nationwide Park Directory</span><span>➜</span>
+        </a>
+        <a href="/ttn-mapping-and-trail-clarity-initiative" class="ttn-pill-outline ttn-pill-outline--pink">
+          TTN™ Mapping &amp; Clarity Initiative
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= NATIONWIDE DIRECTORY SECTION ================= -->
+    <section class="ttn-section" id="directory">
+      <div class="ttn-dir-intro">
+        <div class="ttn-dir-kicker">Nationwide Off-Road Park Directory</div>
+        <h2 class="ttn-section-title">Legal, Trusted, Rider-Approved Parks</h2>
+        <p class="ttn-dir-sub">
+          The Throttle Therapy Nation™ Off-Road Park Directory is your <strong>go-to hub</strong> for legal ATV, SxS, dirt
+          bike and off-road riding areas across the U.S. From local woods runs to destination dunes, this is where riders,
+          families and parks connect on purpose. TTN™ will continue verifying details with each park as we grow this
+          directory.
+        </p>
+        <p class="ttn-dir-sub" style="margin-top: 8px;">
+          Scroll by region, lock in your next trip, then pair this directory with the
+          <a href="#rankings-2025"><strong>2025 Park Rankings</strong></a>
+          to see which parks are rising, which ones are legends and where your next
+          <strong>Ride. Heal. Belong.™</strong> weekend is waiting.
+        </p>
+      </div>
+
+      <!-- REGION NAV -->
+      <div class="ttn-dir-nav-wrap">
+        <div class="ttn-dir-nav-label">Jump to your region</div>
+        <div class="ttn-dir-nav">
+          <a href="#core-region" class="ttn-dir-pill">Core Region</a>
+          <a href="#southeast-region" class="ttn-dir-pill">Southeast</a>
+          <a href="#south-central-region" class="ttn-dir-pill">South-Central</a>
+          <a href="#midwest-region" class="ttn-dir-pill">Midwest</a>
+          <a href="#mountain-west-region" class="ttn-dir-pill">Mountain West</a>
+          <a href="#southwest-region" class="ttn-dir-pill">Southwest</a>
+          <a href="#northeast-region" class="ttn-dir-pill">Northeast</a>
+          <a href="#northwest-pacific-region" class="ttn-dir-pill">Northwest &amp; Pacific</a>
+        </div>
+      </div>
+
+      <!-- CORE REGION -->
+      <section id="core-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>Core Region <span>| Appalachian Heartbeat</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">Kentucky • Tennessee • West Virginia • Virginia • Ohio • Indiana</span><br>
+              This is where Throttle Therapy Nation™ began — mountains, coal country and back roads
+              that raised a movement.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Home Turf • Wildcat &amp; Friends
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Kentucky</div>
+            <ul class="ttn-dir-park-list">
+              <li>Wildcat Off-Road Park — East Bernstadt, KY</li>
+              <li>Black Mountain Off-Road Adventure Area — Harlan/Putney, KY</li>
+              <li>Rush Off-Road Park — Rush, KY</li>
+              <li>Hillbilly Trails (Hillbilly 1000) — Jackson, KY</li>
+              <li>Blue Holler Off-Road Park — Mammoth Cave, KY</li>
+              <li>Mine Made Adventure Park — Knott Co., KY</li>
+              <li>Hollerwood Off-Road Park — Stanton/Slade, KY</li>
+              <li>Daniel Boone Backcountry Byway (DBBB) — Southeast/Central KY (multi-county)</li>
+              <li>Leatherwood Off-Road Park — Leatherwood, KY</li>
+              <li>1806 Adventures — Vanceburg, KY</li>
+              <li>First Frontier Appalachian Trails — Eastern KY (Letcher/Johnson/Martin Counties)</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Tennessee</div>
+            <ul class="ttn-dir-park-list">
+              <li>Windrock Park — Oliver Springs, TN</li>
+              <li>Brimstone Recreation — Huntsville, TN</li>
+              <li>Ride Royal Blue / North Cumberland — Pioneer, TN</li>
+              <li>Adventure Off-Road Park (AOP) — South Pittsburg, TN</li>
+              <li>Doe Mountain Recreation Area — Mountain City, TN</li>
+              <li>Wooly’s Off-Road Club — Lynnville, TN</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">West Virginia</div>
+            <ul class="ttn-dir-park-list">
+              <li>Hatfield-McCoy Trails (System) — Southern WV (multi-county)</li>
+              <li>Burning Rock Off-Road Park — Tams/Beckley, WV</li>
+              <li>Ivy Branch Trail System — Tornado, WV</li>
+              <li>Pinnacle Creek Trail System — Pineville, WV</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Virginia</div>
+            <ul class="ttn-dir-park-list">
+              <li>Spearhead Trails (System) — Southwest VA (multi-county)</li>
+              <li>Mountain View Trail System — St. Paul, VA</li>
+              <li>Coal Canyon Trail System — Grundy, VA</li>
+              <li>Big Stone Gap Off-Road Park — Big Stone Gap, VA</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Ohio</div>
+            <ul class="ttn-dir-park-list">
+              <li>Wayne National Forest OHV — Southeastern OH</li>
+              <li>Southington Offroad — Garrettsville, OH</li>
+              <li>Hanging Rock OHV Trails — Ironton, OH</li>
+              <li>Monday Creek OHV Trails — Nelsonville, OH</li>
+              <li>Bear Creek Amphitheater OHV — East Fultonham, OH</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Indiana</div>
+            <ul class="ttn-dir-park-list">
+              <li>Haspin Acres — Laurel, IN</li>
+              <li>Redbird State Recreation Area (SRA) — Dugger, IN</li>
+              <li>Interlake State Recreation Area (SRA) — Lynnville, IN</li>
+              <li>Badlands Off-Road Park — Attica, IN</li>
+              <li>Lawrence County Recreation Park (ABATE Park) — Springville, IN</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOUTHEAST REGION -->
+      <section id="southeast-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>Southeast Region <span>| Southern Backbone</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">Alabama • Georgia • Florida • Mississippi • North Carolina • South Carolina</span><br>
+              Red clay, deep pines and year-round riding — the Southeast keeps the throttles warm.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Mud • Clay • Pines • Night Rides
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Alabama</div>
+            <ul class="ttn-dir-park-list">
+              <li>Hawk Pride Mountain Off-Road Park — Tuscumbia, AL</li>
+              <li>Stony Lonesome OHV Park — Cullman, AL</li>
+              <li>Top Trails OHV Park — Talladega, AL</li>
+              <li>Hollytree Off-Road Park — Hollytree, AL</li>
+              <li>Morris Mountain ORV Park — Delta, AL</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Georgia</div>
+            <ul class="ttn-dir-park-list">
+              <li>Durhamtown Off-Road Resort — Union Point, GA</li>
+              <li>Iron Mountain Resort — Dahlonega, GA</li>
+              <li>Beasley Knob OHV Trails — Blairsville, GA</li>
+              <li>Highland Park Resort — Cedartown, GA</li>
+              <li>Moccasin Creek Off-Road Park — Blackshear, GA</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Florida</div>
+            <ul class="ttn-dir-park-list">
+              <li>Hardrock Cycle Park — Ocala, FL</li>
+              <li>The Swamp Off-Road Park — Chipley, FL</li>
+              <li>Clear Creek OHV Trails — Milton, FL</li>
+              <li>Hog Waller Mud Bog &amp; ATV Park — Palatka, FL</li>
+              <li>Redneck Mud Park — Punta Gorda, FL</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Mississippi</div>
+            <ul class="ttn-dir-park-list">
+              <li>Wild Country Off-Road — Leakesville, MS</li>
+              <li>Red Creek Off-Road Park — Perkinston, MS</li>
+              <li>Muddy Joe’s Off-Road Park — Lucedale, MS</li>
+              <li>Burden’s Creek Off-Road Park — Hattiesburg, MS</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">North Carolina</div>
+            <ul class="ttn-dir-park-list">
+              <li>Brown Mountain OHV Area — Morganton, NC</li>
+              <li>Brushy Mountain Motorsports Park — Taylorsville, NC</li>
+              <li>Outback ATV Park — Laurinburg, NC</li>
+              <li>Deep Creek ATV Park — Linden, NC</li>
+              <li>Busco Beach ATV Park &amp; Campground — Goldsboro, NC</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">South Carolina</div>
+            <ul class="ttn-dir-park-list">
+              <li>Carolina Adventure World — Winnsboro, SC</li>
+              <li>Battery Park Off-Road — Nesmith, SC</li>
+              <li>Gulches ORV Park — Laurens, SC</li>
+              <li>Broken Nut Off-Road Park — Jefferson, SC</li>
+              <li>Gray Court ATV Park — Gray Court, SC</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOUTH-CENTRAL REGION -->
+      <section id="south-central-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>South-Central Region <span>| Red Dirt &amp; Big Sky</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">Louisiana • Arkansas • Texas • Oklahoma</span><br>
+              Red dirt, river bottoms and wide-open horsepower — built for big groups and bigger weekends.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Red Dirt • River Bottoms • Big Power
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Louisiana</div>
+            <ul class="ttn-dir-park-list">
+              <li>Catahoula Recreation Park — Sicily Island, LA</li>
+              <li>Muddy Bottoms ATV &amp; Recreation Park — Sarepta, LA</li>
+              <li>High Lifter Off-Road Park — Shreveport, LA</li>
+              <li>Tower Trax ATV Recreation Area — Fluker, LA</li>
+              <li>Sandstone Multi-Use Trail — Kisatchie National Forest, LA</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Arkansas</div>
+            <ul class="ttn-dir-park-list">
+              <li>Byrd’s Adventure Center — Ozark, AR</li>
+              <li>Mack’s Pines Off-Road Area — Dover, AR</li>
+              <li>Wolf Pen Gap Trail System — Mena, AR</li>
+              <li>Superlift ORV Park — Hot Springs, AR</li>
+              <li>Carter Off-Road Park — Alexander, AR</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Texas</div>
+            <ul class="ttn-dir-park-list">
+              <li>Barnwell Mountain Recreation Area — Gilmer, TX</li>
+              <li>Hidden Falls Adventure Park — Marble Falls, TX</li>
+              <li>Xtreme Off-Road Park &amp; Beach — Crosby, TX</li>
+              <li>General Sam’s Off-Road Park — Huntsville, TX</li>
+              <li>Sabine ATV Park — Burkeville, TX</li>
+              <li>Katemcy Rocks — Mason, TX</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Oklahoma</div>
+            <ul class="ttn-dir-park-list">
+              <li>Cross Bar Ranch Off-Road Park — Davis, OK</li>
+              <li>MidAmerica Outdoors — Jay, OK</li>
+              <li>Scipio Recreational Trails — Scipio, OK</li>
+              <li>Appalachia Bay ORV Area — Sand Springs, OK</li>
+              <li>Stillwater 500 Motorcycle Park — Stillwater, OK</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MIDWEST REGION -->
+      <section id="midwest-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>Midwest Region <span>| Backwoods &amp; Open Plains</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">Illinois • Michigan • Missouri • Wisconsin • Minnesota • Iowa • Kansas • Nebraska</span><br>
+              Forest loops, sand and farm-country fun — where small towns turn into big ride weekends.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Woods • Dunes • Prairie Lines
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Illinois</div>
+            <ul class="ttn-dir-park-list">
+              <li>The Cliffs Insane Terrain Off-Road Park — Marseilles, IL</li>
+              <li>Fox Valley Off-Road — Ottawa, IL</li>
+              <li>Williams Hill Pass OHV Park — Harrisburg, IL</li>
+              <li>Mill Creek Park OHV Trails — Marshall, IL</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Michigan</div>
+            <ul class="ttn-dir-park-list">
+              <li>Silver Lake Sand Dunes ORV Area — Mears, MI</li>
+              <li>Bundy Hill Off-Road Park — Jerome, MI</li>
+              <li>St. Helen ORV Trail — St. Helen, MI</li>
+              <li>Drummond Island ORV Trails — Drummond Island, MI</li>
+              <li>Twisted Trails Off-Road Park — Copemish, MI</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Missouri</div>
+            <ul class="ttn-dir-park-list">
+              <li>St. Joe State Park — Park Hills, MO</li>
+              <li>Southern Missouri Off-Road Ranch (SMORR) — Seymour, MO</li>
+              <li>Brick’s Off-Road Park — Poplar Bluff, MO</li>
+              <li>Flat Nasty Off-Road Park — Jadwin, MO</li>
+              <li>Hooter Holler Off-Road Park — Mountain Grove, MO</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Wisconsin</div>
+            <ul class="ttn-dir-park-list">
+              <li>Dyracuse Mound Recreation Area — Nekoosa, WI</li>
+              <li>Tigerton OHV Park &amp; Campground — Tigerton, WI</li>
+              <li>Cheese Country Trail System — Monroe, WI</li>
+              <li>Iron County ATV/UTV Trail System — Hurley, WI</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Minnesota</div>
+            <ul class="ttn-dir-park-list">
+              <li>Iron Range OHV Recreation Area — Gilbert, MN</li>
+              <li>Appleton Area Recreational OHV Park — Appleton, MN</li>
+              <li>Nemadji State Forest Trails — Moose Lake, MN</li>
+              <li>Northwoods ATV Trail System — Ely, MN</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Iowa</div>
+            <ul class="ttn-dir-park-list">
+              <li>River Valley OHV Park — Council Bluffs, IA</li>
+              <li>Bluff Creek OHV Park — Eddyville, IA</li>
+              <li>Lakeview OHV Park — Solon, IA</li>
+              <li>Riverview OHV Park — Waterloo, IA</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Kansas</div>
+            <ul class="ttn-dir-park-list">
+              <li>Kansas Rocks Recreation Park — Mapleton, KS</li>
+              <li>Tuttle Creek ORV Area — Randolph, KS</li>
+              <li>4x4 Land Off-Road Park — Topeka, KS</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Nebraska</div>
+            <ul class="ttn-dir-park-list">
+              <li>Halsey National Forest OHV Trails — Halsey, NE</li>
+              <li>Off Road Ranch — Norfolk, NE</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOUNTAIN WEST REGION -->
+      <section id="mountain-west-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>Mountain West Region <span>| High Country Legends</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">Colorado • Utah • Wyoming • Idaho • Montana</span><br>
+              Alpine passes, desert slickrock and bucket-list trail systems — this is dream-trip territory.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Alpine • Desert • Iconic Trails
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Colorado</div>
+            <ul class="ttn-dir-park-list">
+              <li>Taylor Park OHV Area — Almont, CO</li>
+              <li>Bangs Canyon OHV Area — Grand Junction, CO</li>
+              <li>Alpine Loop Scenic Byway — Lake City, CO</li>
+              <li>Wagon Wheel Trail System — Meeker, CO</li>
+              <li>Ram Off-Road Park — Colorado Springs, CO</li>
+              <li>Rainbow Falls OHV Trail System — Woodland Park, CO</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Utah</div>
+            <ul class="ttn-dir-park-list">
+              <li>Sand Hollow State Park — Hurricane, UT</li>
+              <li>Moab Off-Road Trail Network — Moab, UT</li>
+              <li>Little Sahara Recreation Area — Nephi, UT</li>
+              <li>Paiute ATV Trail System — Central Utah</li>
+              <li>Hog Canyon OHV Trail — Kanab, UT</li>
+              <li>Coral Pink Sand Dunes State Park — Kanab, UT</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Wyoming</div>
+            <ul class="ttn-dir-park-list">
+              <li>Killpecker Sand Dunes OHV Area — Rock Springs, WY</li>
+              <li>Bear Lodge Mountains OHV Trail System — Sundance, WY</li>
+              <li>McCullough Peaks OHV Area — Cody, WY</li>
+              <li>South Pass/Continental Divide Trail System — Lander, WY</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Idaho</div>
+            <ul class="ttn-dir-park-list">
+              <li>St. Anthony Sand Dunes — St. Anthony, ID</li>
+              <li>Salmon-Challis National Forest OHV Trails — Salmon, ID</li>
+              <li>Baumgartner Trails — Fairfield, ID</li>
+              <li>Owyhee Front OHV Trails — Murphy, ID</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Montana</div>
+            <ul class="ttn-dir-park-list">
+              <li>Pipestone OHV Area — Butte, MT</li>
+              <li>Radersburg OHV Trail System — Townsend, MT</li>
+              <li>Helena National Forest OHV Trails — Helena, MT</li>
+              <li>Ten Mile Creek Recreation Area — Helena, MT</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOUTHWEST REGION -->
+      <section id="southwest-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>Southwest Region <span>| Desert Heat &amp; Red Rock</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">Arizona • Nevada • New Mexico</span><br>
+              Dunes, desert canyons and lunar landscapes — wide open for sunrise to stars.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Dunes • Desert • Big Miles
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Arizona</div>
+            <ul class="ttn-dir-park-list">
+              <li>Arizona Peace Trail — Western AZ (multi-county loop)</li>
+              <li>Sycamore Creek OHV Area — Fountain Hills, AZ</li>
+              <li>Broken Arrow Trail — Sedona, AZ</li>
+              <li>Bulldog Canyon OHV Area — Mesa, AZ</li>
+              <li>Boulders OHV Area — Wickenburg, AZ</li>
+              <li>Box Canyon OHV Trail — Florence, AZ</li>
+              <li>Alto Pit OHV Area — Prescott, AZ</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Nevada</div>
+            <ul class="ttn-dir-park-list">
+              <li>Logandale Trails System — Logandale, NV</li>
+              <li>Sand Mountain Recreation Area — Fallon, NV</li>
+              <li>Moon Rocks (Hungry Valley Recreation Area) — Reno, NV</li>
+              <li>Nellis Dunes Recreation Area — Las Vegas, NV</li>
+              <li>Amargosa Big Dune — Amargosa Valley, NV</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">New Mexico</div>
+            <ul class="ttn-dir-park-list">
+              <li>Farmington Glade Run Recreation Area — Farmington, NM</li>
+              <li>Red River Off-Road Area — Red River, NM</li>
+              <li>Mescalero Sands North OHV Area — Roswell, NM</li>
+              <li>Dunes Vehicle Recreation Area — Aztec, NM</li>
+              <li>Haystack Mountain OHV Area — Roswell, NM</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- NORTHEAST REGION -->
+      <section id="northeast-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>Northeast Region <span>| Forests, Ridges &amp; Coastlines</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">Pennsylvania • Maryland • New York • Vermont • New Hampshire • Maine</span><br>
+              Deep woods, mountain passes and crisp air — where fall colors and throttle therapy collide.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Woods • Ridge Lines • Four Seasons
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Pennsylvania</div>
+            <ul class="ttn-dir-park-list">
+              <li>AOAA (Anthracite Outdoor Adventure Area) — Coal Township, PA</li>
+              <li>Famous Reading Outdoors — Pottsville, PA</li>
+              <li>Mountain Ridge ATV Park — Central City, PA</li>
+              <li>Rock Run Recreation Area — Patton, PA</li>
+              <li>Lost Trails ATV Park — Dunmore, PA</li>
+              <li>Mines and Meadows ATV Resort — Wampum, PA</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Maryland</div>
+            <ul class="ttn-dir-park-list">
+              <li>Wolf Den Run State Park — Kitzmiller, MD</li>
+              <li>St. John’s Rock ORV Trail — Garrett County, MD</li>
+              <li>Potomac State Forest ORV Trails — Oakland, MD</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">New York</div>
+            <ul class="ttn-dir-park-list">
+              <li>Tall Pines ATV Park — Andover, NY</li>
+              <li>Mettowee Off-Road Extreme Park — Whitehall, NY</li>
+              <li>Adirondack ATV Tours — Lake George, NY</li>
+              <li>Trail Fest Area (Lewis County Trail System) — Lowville, NY</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Vermont</div>
+            <ul class="ttn-dir-park-list">
+              <li>VASA Trail System (Vermont ATV Sportsman’s Association) — Statewide, VT</li>
+              <li>West Mountain Trail — West Burke, VT</li>
+              <li>Washington County Rail Trail — Barre, VT</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">New Hampshire</div>
+            <ul class="ttn-dir-park-list">
+              <li>Ride the Wilds Trail System — Northern NH</li>
+              <li>Jericho Mountain State Park — Berlin, NH</li>
+              <li>Pisgah State Park OHV Area — Winchester, NH</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Maine</div>
+            <ul class="ttn-dir-park-list">
+              <li>ATV Maine Trail System — Statewide, ME</li>
+              <li>Northern Outdoors Adventure Resort — The Forks, ME</li>
+              <li>Rangeley ATV Club Trails — Rangeley, ME</li>
+              <li>Aroostook County ATV Trails — Presque Isle, ME</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- NORTHWEST & PACIFIC REGION -->
+      <section id="northwest-pacific-region" class="ttn-dir-region ttn-glow">
+        <div class="ttn-dir-region-header">
+          <div class="ttn-dir-region-title">
+            <h3>Northwest &amp; Pacific Region <span>| Coastlines to Volcanoes</span></h3>
+            <p class="ttn-dir-region-sub">
+              <span class="states">California • Oregon • Washington • Alaska</span><br>
+              Ocean air, big dunes and rugged forest lines — iconic views with equally iconic trails.
+            </p>
+          </div>
+          <div class="ttn-dir-region-badge">
+            Dunes • Coast • Northern Lights
+          </div>
+        </div>
+
+        <div class="ttn-dir-state-grid">
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">California</div>
+            <ul class="ttn-dir-park-list">
+              <li>Oceano Dunes SVRA — Oceano, CA</li>
+              <li>Hollister Hills SVRA — Hollister, CA</li>
+              <li>Prairie City SVRA — Rancho Cordova, CA</li>
+              <li>Hungry Valley SVRA — Gorman, CA</li>
+              <li>Johnson Valley OHV Area — Lucerne Valley, CA</li>
+              <li>Dumont Dunes OHV Area — Baker, CA</li>
+              <li>Ocotillo Wells SVRA — Borrego Springs, CA</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Oregon</div>
+            <ul class="ttn-dir-park-list">
+              <li>Oregon Dunes National Recreation Area — Florence, OR</li>
+              <li>Sand Lake Recreation Area — Tillamook, OR</li>
+              <li>Browns Camp OHV Area (Tillamook State Forest) — Gales Creek, OR</li>
+              <li>McGrew Trail — Rogue River–Siskiyou National Forest, OR</li>
+              <li>East Fort Rock OHV Trail System — Bend, OR</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Washington</div>
+            <ul class="ttn-dir-park-list">
+              <li>Tahuya State Forest ORV Area — Belfair, WA</li>
+              <li>Evans Creek ORV Area — Wilkeson, WA</li>
+              <li>Walker Valley ORV Area — Mount Vernon, WA</li>
+              <li>Liberty OHV Area — Cle Elum, WA</li>
+              <li>Capitol State Forest OHV Trails — Olympia, WA</li>
+            </ul>
+          </div>
+
+          <div class="ttn-dir-state-card">
+            <div class="ttn-dir-state-name">Alaska</div>
+            <ul class="ttn-dir-park-list">
+              <li>Jim Creek Recreation Area — Palmer, AK</li>
+              <li>Knik Glacier Trail — Palmer, AK</li>
+              <li>Petersville State Recreation Mining Area — Trapper Creek, AK</li>
+              <li>Eureka Trail System — Glennallen, AK</li>
+              <li>Caribou Hills Trail System — Ninilchik, AK</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARTNER / PARK MENTORSHIP CTA (BRIGHT BAND) -->
+      <section class="ttn-band ttn-band--bright ttn-glow" id="partner-lane">
+        <h2 class="ttn-band-heading">For Parks, Shops &amp; Small Teams Who Want to Build With TTN.</h2>
+        <p class="ttn-band-body">
+          If you’re already serving riders — running a park, building parts, wrenching on rigs, creating media,
+          or keeping things organized behind the scenes — there’s a lane inside TTN built for you. The
+          <strong>Mentored Partner Program</strong> helps small, community-facing work grow with structure, protection
+          and shared standards, not just hype.
+        </p>
+        <p class="ttn-band-body">
+          If you see your park, crew or brand somewhere in this directory and want to carry more than a logo,
+          this is where that conversation starts.
+        </p>
+
+        <div class="ttn-band-links">
+          <a href="/ttn-mentored-partner-program" class="ttn-btn-primary">
+            <span>Learn About Mentored Partners</span><span>➜</span>
+          </a>
+          <a href="/ttn-application-gateway" class="ttn-pill-outline ttn-pill-outline--pink">
+            Open the Application Gateway
+          </a>
+        </div>
+      </section>
+
+      <!-- LEGAL / SAFETY NOTE -->
+      <section class="ttn-dir-legal-note">
+        <strong>Ride Smart. Ride Legal. Ride Together.</strong><br>
+        Always verify park access, hours, rules, permits and trail conditions directly with each park before you ride.
+        Proper safety gear is non-negotiable. All listings are for general informational purposes and may not reflect
+        real-time closures, hazards, or regulation changes.
+      </section>
+
+    </section>
+
+  </div>
+</div>
+<!-- END UNIFIED TTN — PARK RANKINGS & DIRECTORY PAGE -->

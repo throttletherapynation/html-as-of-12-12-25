@@ -1,0 +1,766 @@
+<!-- TTN — FAMILY & FUTURE RIDERS PAGE – MATCHED TO THE NATION LAYOUT -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Rock+Salt&display=swap');
+
+/* THEME TOKENS (SAME AS THE NATION PAGE) */
+.ttn-theme {
+  --ttn-bg-page: #050814;
+  --ttn-bg-card-top: #081220;
+  --ttn-bg-card-bottom: #02101f;
+
+  --ttn-pink: #ff007d;
+  --ttn-orange: #ff6a00;
+  --ttn-blue: #00c6ff;
+  --ttn-gold: #ffd400;
+
+  --ttn-text: #f7f8ff;
+  --ttn-text-soft: #b8c5e6;
+  --ttn-text-muted: #8d96b5;
+
+  --ttn-shadow-soft: 0 26px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* PAGE WRAPPER */
+.ttn-theme {
+  background: radial-gradient(circle at top, #0c1224 0, #050814 55%, #02040a 100%);
+  color: var(--ttn-text);
+  font-family: 'Michroma', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 1.25rem 4rem;
+}
+
+.ttn-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LOGO ROW */
+.ttn-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.45);
+  box-shadow: 0 0 28px rgba(255, 0, 125, 0.4);
+  background:
+    radial-gradient(circle at top, rgba(255,0,125,0.35), transparent 60%),
+    radial-gradient(circle at bottom, rgba(0,198,255,0.4), #020309 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.35);
+  background: #020309; /* simple dark backing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hide the old text version if any span is left */
+.ttn-logo-mark span {
+  display: none;
+}
+
+/* make the logo fill the circle nicely */
+.ttn-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.35);
+  background: #020309; /* simple dark backing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hide the old text version if any span is left */
+.ttn-logo-mark span {
+  display: none;
+}
+
+/* make the logo fill the circle nicely */
+.ttn-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ttn-logo-mark span {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.3rem;
+  color: var(--ttn-pink);
+}
+.ttn-logo-mark {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.35);
+  background: #020309; /* simple dark backing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hide the old text version if any span is left */
+.ttn-logo-mark span {
+  display: none;
+}
+
+/* make the logo fill the circle nicely */
+.ttn-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ttn-logo-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+}
+
+/* HERO TEXT */
+.ttn-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ttn-hero-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+
+/* IMPORTANT: use soft white here (like The Nation), not yellow */
+.ttn-hero-support {
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ttn-text-soft);
+  margin: 0 0 0.8rem;
+}
+
+.ttn-hero-sub {
+  font-size: clamp(1rem, 1.05vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 780px;
+}
+
+.ttn-hero-sub strong {
+  color: var(--ttn-blue);
+}
+
+.ttn-underline {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ttn-pink), var(--ttn-blue));
+  margin-top: 0.75rem;
+}
+
+/* HERO LAYOUT */
+.ttn-hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* CTAs */
+.ttn-hero-ctas {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.ttn-btn-primary,
+.ttn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.1rem;
+  border-radius: 999px;
+  font-family: 'Michroma', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Glow redirect – same as The Nation */
+.ttn-btn-primary {
+  background-image: linear-gradient(135deg, var(--ttn-pink), var(--ttn-orange));
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 90, 150, 0.5);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+}
+
+.ttn-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow: 0 16px 40px rgba(255, 90, 150, 0.65);
+}
+
+/* Outlined pills */
+.ttn-pill-outline {
+  border: 1.5px solid var(--ttn-blue);
+  background: rgba(5,8,20,0.7);
+  color: var(--ttn-text);
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.ttn-pill-outline--pink { border-color: var(--ttn-pink); }
+.ttn-pill-outline--orange { border-color: var(--ttn-orange); }
+
+.ttn-pill-outline:hover {
+  background: rgba(8, 20, 40, 0.95);
+  box-shadow: 0 0 18px rgba(0, 198, 255, 0.45);
+}
+
+/* SECTION HEADER */
+.ttn-section {
+  margin-top: 3rem;
+}
+
+.ttn-section-header {
+  margin-bottom: 1.5rem;
+}
+
+.ttn-section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.ttn-section-title {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.35rem;
+}
+
+.ttn-body-copy {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+/* CARD ROWS */
+.ttn-card-row {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ttn-card {
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, var(--ttn-bg-card-top), var(--ttn-bg-card-bottom));
+  border-radius: 26px;
+  box-shadow: var(--ttn-shadow-soft);
+  padding: 1.7rem 1.6rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.ttn-card-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--ttn-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+/* IMPORTANT: match The Nation – headings are pink, not white */
+.ttn-card-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: 1.2rem;
+  color: var(--ttn-pink);
+  margin: 0 0 0.6rem;
+}
+
+.ttn-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ttn-text-soft);
+  flex: 1;
+}
+
+.ttn-card-body ul {
+  padding-left: 1.1rem;
+  margin: 0.4rem 0 0;
+}
+
+.ttn-card-body li + li {
+  margin-top: 0.2rem;
+}
+
+/* BANDS */
+.ttn-band {
+  margin-top: 3rem;
+  padding: 2rem 1.8rem;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--ttn-shadow-soft);
+  background:
+    radial-gradient(circle at top left, rgba(0, 198, 255, 0.18), transparent 55%),
+    linear-gradient(to bottom, #070f1c, #02040a);
+}
+
+.ttn-band-heading {
+  font-family: 'Rock Salt', system-ui;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  color: var(--ttn-pink);
+  margin: 0 0 0.75rem;
+}
+
+.ttn-band-body {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--ttn-text-soft);
+  max-width: 900px;
+}
+
+.ttn-band-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* CHECKLIST */
+.ttn-checklist {
+  margin-top: 0.8rem;
+  padding-left: 0;
+  list-style: none;
+  font-size: 0.96rem;
+  color: var(--ttn-text-soft);
+}
+
+.ttn-checklist li {
+  margin-bottom: 0.35rem;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.ttn-checklist li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  color: var(--ttn-gold);
+}
+
+/* UNIVERSAL GLOW FOR BOXES */
+.ttn-glow {
+  position: relative;
+}
+.ttn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 0, 125, 0.5),
+    rgba(0, 198, 255, 0.4),
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .ttn-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ttn-card-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1025px) {
+  .ttn-card-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+</style>
+
+<div class="ttn-theme">
+  <div class="ttn-shell">
+
+    <!-- HERO -->
+    <section class="ttn-hero-layout" id="top">
+      <div>
+        <div class="ttn-logo-row">
+         <div class="ttn-logo-mark">
+  <img
+    src="https://assets.zyrosite.com/sdnMdPjG6N37IB0O/b82b5a17-9b9b-4ec7-8e6b-cc65e3e5ecee_4_5005_c-W2zSHbHs8suhSuJE.jpeg"
+    alt="TTN logo"
+    class="ttn-logo-img"
+  />
+</div>
+          <div class="ttn-logo-text">
+            Family &amp; Future Riders • Ride. Heal. Belong.
+          </div>
+        </div>
+
+        <div class="ttn-kicker">
+          Throttle Therapy Nation™ • Built For Real Families
+        </div>
+
+        <h1 class="ttn-hero-heading">
+          Family &amp; Future Riders
+        </h1>
+
+        <p class="ttn-hero-support">
+          “Building Riders From the Start — Family First, Always.”
+        </p>
+
+        <p class="ttn-hero-sub">
+          This page is for the <strong>parents, grandparents, caregivers, spouses and future riders</strong> who make
+          every trip possible. Whether you’re teaching a brand-new rider, bringing kids to camp for the first time,
+          or building a family tradition on the trail, you belong here.
+        </p>
+
+        <p class="ttn-hero-sub">
+          TTN™ exists to help you <strong>ride together, stay safe, grow skills and protect what matters most</strong> —
+          from the way you choose parks, to the gear you buy, to the community you plug into.
+        </p>
+
+        <div class="ttn-underline"></div>
+
+        <div class="ttn-hero-ctas">
+          <a
+            href="https://shop.throttletherapynation.com"
+            class="ttn-btn-primary"
+            target="_top"
+          >
+            <span>Shop Family-Friendly Gear</span><span>➜</span>
+          </a>
+
+          <a
+            href="https://www.facebook.com/groups/throttle.therapy.nation/"
+            class="ttn-btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Join the TTN™ Community</span><span>➜</span>
+          </a>
+
+          <a href="#support" class="ttn-pill-outline ttn-pill-outline--pink">
+            How We Support Families
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO THIS PAGE IS FOR -->
+    <section class="ttn-section" id="who">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">who this serves</div>
+        <h2 class="ttn-section-title">Built Around Real Families, Not Just Machines.</h2>
+        <p class="ttn-body-copy">
+          TTN™ is not “for hardcore drivers only.” It’s built so that
+          <strong>families, new riders and support crews</strong> can move at their pace, build confidence
+          and still feel part of the action — on and off the trail.
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">1 • New &amp; Growing Families</div>
+          <h3 class="ttn-card-heading">Parents, Kids &amp; Future Riders</h3>
+          <div class="ttn-card-body">
+            <p>
+              You’re juggling nap times, snacks, homework, sports and everything else — and still trying
+              to get everyone outside and unplugged.
+            </p>
+            <ul>
+              <li>Want safe, confidence-building parks and routes.</li>
+              <li>Need gear that fits small riders and growing bodies.</li>
+              <li>Care about noise, fatigue and realistic ride time for kids.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">2 • Support Crews &amp; Caregivers</div>
+          <h3 class="ttn-card-heading">Spouses, Grandparents &amp; Non-Drivers</h3>
+          <div class="ttn-card-body">
+            <p>
+              You may not be behind the wheel every mile, but you are the reason the trip works.
+              Your role matters just as much as the driver’s.
+            </p>
+            <ul>
+              <li>Want clear expectations for what the day or weekend looks like.</li>
+              <li>Need safe spaces to watch, ride along, rest and recharge.</li>
+              <li>Care about bathrooms, camp layout, parking and real-world comfort.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">3 • New &amp; Nervous Riders</div>
+          <h3 class="ttn-card-heading">“I Don’t Want to Hold Everyone Back.”</h3>
+          <div class="ttn-card-body">
+            <p>
+              Maybe you’re brand new. Maybe you had a scare. Maybe life has handed you more than enough
+              impact already. You still deserve a place in the seat.
+            </p>
+            <ul>
+              <li>Want a step-by-step path to build skills.</li>
+              <li>Need permission to say “that’s enough for today.”</li>
+              <li>Care about riding with people who see you as a whole human, not a problem.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW TTN SUPPORTS FAMILIES -->
+    <section class="ttn-section" id="support">
+      <div class="ttn-section-header">
+        <div class="ttn-section-label">how we help</div>
+        <h2 class="ttn-section-title">The TTN™ Family Support Framework.</h2>
+        <p class="ttn-body-copy">
+          Our goal is to help families go from <strong>“We’d love to, but…”</strong> to
+          <strong>“We’re so glad we did.”</strong> Everything we build runs through a simple lens:
+          <strong>Ride. Heal. Belong.</strong>
+        </p>
+      </div>
+
+      <div class="ttn-card-row">
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Ride • Skills &amp; Seat Time</div>
+          <h3 class="ttn-card-heading">Making the First Rides Feel Safe — Not Scary.</h3>
+          <div class="ttn-card-body">
+            <p>
+              We focus on <strong>real-world conditions</strong>, not just highlight reels. That means selecting
+              parks and routes where new riders and kids can learn without being thrown into terrain that breaks
+              machines or rattles confidence.
+            </p>
+            <ul>
+              <li>Guidance on picking parks that match your crew’s skill range.</li>
+              <li>Seat-time building approach — short, supported loops before big days.</li>
+              <li>Education that respects fear, fatigue and sensory overload.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Heal • Mental &amp; Emotional Space</div>
+          <h3 class="ttn-card-heading">Using the Ride to Breathe, Not Escape.</h3>
+          <div class="ttn-card-body">
+            <p>
+              For many families, off-road time is less about adrenaline and more about
+              <strong>exhale</strong>. We honor the fact that some riders are healing from grief, burnout,
+              medical challenges or life changes.
+            </p>
+            <ul>
+              <li>Language and spaces that make it okay to ride at your own pace.</li>
+              <li>Support for riders processing big life chapters, not just big climbs.</li>
+              <li>Encouragement to use the trails as a place to reconnect, not numb out.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Belong • Community &amp; Culture</div>
+          <h3 class="ttn-card-heading">No One Rides “Less Than” Here.</h3>
+          <div class="ttn-card-body">
+            <p>
+              Belonging means everyone has a place — the kid counting rigs at camp, the grandparent cheering from the
+              fence line, the new driver nervous about their first ledge, and the veteran who’s learned to slow down
+              for the people they love.
+            </p>
+            <ul>
+              <li>Online spaces that welcome real questions and beginner wins.</li>
+              <li>Events and guided rides that are built for mixed skill levels.</li>
+              <li>A culture that celebrates progress, not perfection.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ttn-card ttn-glow">
+          <div class="ttn-card-kicker">Gear &amp; Preparation</div>
+          <h3 class="ttn-card-heading">Right-Sized, Real-Life Gear Choices.</h3>
+          <div class="ttn-card-body">
+            <p>
+              We care less about “looking sponsored” and more about <strong>being protected</strong>. That includes
+              fit, function, and how gear works for long days with kids, multi-day trips and different body types.
+            </p>
+            <ul>
+              <li>Highlighting apparel and safety gear that supports real families.</li>
+              <li>Prioritizing comfort, protection and budget over trends.</li>
+              <li>Connecting you to brands we trust for the long haul.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SAFETY & CONFIDENCE CHECKLIST -->
+    <section class="ttn-band ttn-glow" id="safety">
+      <h2 class="ttn-band-heading">The Family Ride Readiness Checklist.</h2>
+      <p class="ttn-band-body">
+        You don’t have to be perfect to take your family riding. You just need a
+        <strong>clear starting point</strong>. Use this checklist as a living tool — something you revisit
+        before each season or big trip.
+      </p>
+
+      <ul class="ttn-checklist">
+        <li>
+          <strong>Everyone knows the plan.</strong> Where you’re riding, how long you’ll be out, what the backup plan
+          is if someone is tired, overstimulated or done for the day.
+        </li>
+        <li>
+          <strong>Gear fits the people actually wearing it.</strong> Helmets, harnesses, eye protection, footwear and
+          layers checked for kids who grew and adults whose needs changed.
+        </li>
+        <li>
+          <strong>Machines are pre-checked.</strong> Fluids, tires, lug nuts, belts, lights, radios and anything that
+          keeps you rolling safely — especially when kids are on board.
+        </li>
+        <li>
+          <strong>Roles are clear.</strong> Who leads? Who sweeps? Who rides in which rig? Who is the “call it”
+          person if conditions change or someone needs to turn back?
+        </li>
+        <li>
+          <strong>“Tap out” is respected.</strong> Everyone understands that saying “I’m done” is not failure — it’s
+          part of keeping the whole crew safe and supported.
+        </li>
+        <li>
+          <strong>Weather and daylight are on your side.</strong> Plan around nap windows, heat, cold and how far you
+          are from camp or town when the sun starts to drop.
+        </li>
+        <li>
+          <strong>Communication works.</strong> Radios or cell coverage tested where possible, and simple hand signals
+          agreed on before you leave camp.
+        </li>
+      </ul>
+    </section>
+
+    <!-- NEXT STEPS / GET INVOLVED -->
+    <section class="ttn-band ttn-glow" id="next-steps">
+      <h2 class="ttn-band-heading">Ways Your Family Can Plug Into TTN™ Right Now.</h2>
+      <p class="ttn-band-body">
+        You don’t have to wait for a perfect season, a fully built rig or a big budget. Here are simple,
+        practical ways to move forward from wherever you’re starting.
+      </p>
+
+      <div class="ttn-band-links">
+        <a
+          href="https://www.facebook.com/groups/throttle.therapy.nation/"
+          class="ttn-btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Join the Nation Online</span><span>➜</span>
+        </a>
+
+        <a
+          href="https://www.facebook.com/groups/wildcatoffroadofficialridershub/"
+          class="ttn-pill-outline ttn-pill-outline--orange"
+          target="_blank"
+          rel="noopener"
+        >
+          Wildcat Riders Hub
+        </a>
+
+        <a
+          href="https://shop.throttletherapynation.com"
+          class="ttn-pill-outline ttn-pill-outline--pink"
+          target="_top"
+        >
+          Shop Your Therapy™
+        </a>
+
+        <a
+          href="mailto:ride.heal.belong@gmail.com"
+          class="ttn-pill-outline"
+        >
+          Email TTN™: ride.heal.belong@gmail.com
+        </a>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="ttn-band ttn-glow">
+      <h2 class="ttn-band-heading">Your Family Belongs in the Story, Too.</h2>
+      <p class="ttn-band-body">
+        Throttle Therapy Nation™ was never meant to be a highlight reel for a select few. It’s a living, breathing
+        ecosystem of <strong>families, future riders, industry partners, educators and parks</strong> who believe that
+        what happens off-road can change what feels possible back home.
+      </p>
+      <p class="ttn-band-body" style="margin-top:0.7rem;">
+        Whether you’re just now googling “first off-road trip with kids” or you’ve been riding for decades and want
+        to do it differently, there is room for you here. One ride, one conversation, one weekend at a time.
+      </p>
+
+      <div class="ttn-band-links">
+        <a
+          href="https://www.facebook.com/groups/throttle.therapy.nation/"
+          class="ttn-btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Join the Nation</span><span>➜</span>
+        </a>
+        <a
+          href="https://shop.throttletherapynation.com"
+          class="ttn-btn-primary"
+          target="_top"
+        >
+          <span>You're One Stop Therapy Shop</span><span>➜</span>
+        </a>
+        <a href="#top" class="ttn-pill-outline">
+          Back to Top
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+<!-- END TTN — FAMILY & FUTURE RIDERS PAGE – MATCHED TO THE NATION LAYOUT -->
